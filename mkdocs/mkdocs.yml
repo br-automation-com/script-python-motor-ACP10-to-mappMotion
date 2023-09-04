@@ -1,4 +1,4 @@
-site_name: mappMotion samples
+site_name: ACP10 motor table conversion
 use_directory_urls: false
 
 extra_css: [extra.css]
@@ -30,6 +30,6 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tilde
       
-repo_url: https://github.com/br-automation-com/mappMotion-Samples
+repo_url: https://github.com/br-automation-com/script-python-motor-ACP10-to-mappMotion
 repo_name: GitHub Repo
 
