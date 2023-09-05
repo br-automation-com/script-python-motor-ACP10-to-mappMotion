@@ -8,6 +8,7 @@
         <Parameter Name="MOTOR_COMPATIBILITY" ID="31" Value="0x0203" Description="Motor: Software compatibility" />
         <Parameter Name="MOTOR_WIND_CONNECT" ID="46" Value="1" Description="Motor: Winding connection" />
         <Parameter Name="MOTOR_POLEPAIRS" ID="47" Value="4" Description="Motor: Number of pole-pairs" />
+        <Parameter Name="MOTOR_UDC_MAX" ID="47" Value="44" Description="Test" />
       </Group>
       <Group Name="Brake parameters">
         <Parameter Name="MOTOR_BRAKE_CURR_RATED" ID="42" Value="0" Unit="A" Description="Motor holding brake: Rated current" />

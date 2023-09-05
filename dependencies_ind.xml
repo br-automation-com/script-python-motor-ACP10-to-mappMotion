@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <VoltageLimitation Entry="Motor.StarEquivalentCircuit.VoltageLimitation.Type := mcMIMSECVL_USE;     // Enable voltage limitation"  />
+    <Brake Entry="Brake.Type := mcMIB_USE;      // Enable motor brake"  />
+    <BrakeVoltageControlled Entry="Brake.Used.ControlMode.Type := mcMIBUCM_V_CTRL;      // Brake voltage control mode"  />
+    <BrakeLimits Entry="Brake.Used.Limits.Type :=  mcMIBUL_USE;      // Holding brake limits"  />
+</root>

@@ -1,5 +1,5 @@
 // --------------------------------------------------------------- 
-// Auto converted with version 1 on 2023-09-04 11:35:16.449249
+// Auto converted with version 1 on 2023-09-05 16:33:11.554082
 // --------------------------------------------------------------- 
 ACTION motvsSIE:
 	// Motor type is synchronous
@@ -7,6 +7,9 @@ ACTION motvsSIE:
 	// Motor compatibility is set fixed to 0x0203. Old value was := 0x0203;		 // Motor: Software compatibility
 	// Winding connection is set fixed to 1. Old values was := 1;		 // Motor: Winding connection
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.NumberOfPolePairs := 4;		 // Motor: Number of pole-pairs
+	AxisMotorCfg.ParMotorSynchronous.Brake.Type := mcMSB_USE;      // Enable motor brake
+	AxisMotorCfg.ParMotorSynchronous.Brake.Used.Limits.Type :=  mcMSBUL_USE;      // Holding brake limits
+	AxisMotorCfg.ParMotorSynchronous.Brake.Used.Limits.Used.MaximumVoltage := 123;		 // Test
 	AxisMotorCfg.ParMotorSynchronous.Brake.Used.NominalCurrent := 1;		 // Unit (A) Motor holding brake: Rated current (vorher 0.5)
 	AxisMotorCfg.ParMotorSynchronous.Brake.Used.NominalTorque := 43;		 // Unit (Nm) Motor holding brake: Rated torque
 	AxisMotorCfg.ParMotorSynchronous.Brake.Used.ActivationDelay := 0.1;		 // Unit (s) Motor holding brake: Engaging delay (vorher 0.07 und 0.08)

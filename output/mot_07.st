@@ -1,5 +1,5 @@
 // --------------------------------------------------------------- 
-// Auto converted with version 1 on 2023-09-04 11:35:16.478047
+// Auto converted with version 1 on 2023-09-05 16:33:11.569041
 // --------------------------------------------------------------- 
 ACTION mot_07:
 	// Parameter data for 1FK7083-5AF71
@@ -7,6 +7,9 @@ ACTION mot_07:
 	// Motor compatibility is set fixed to 0x0203. Old value was := 0x0203;		 // Motor: Software compatibility
 	// Winding connection is set fixed to 1. Old values was := 1;		 // Motor: Winding connection
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.NumberOfPolePairs := 4;		 // Motor: Number of pole-pairs
+	AxisMotorCfg.ParMotorSynchronous.Motor.Default.VoltageLimitation.Used := mcMSMDVL_USE;     // Enable voltage limitation
+	AxisMotorCfg.ParMotorSynchronous.Motor.Default.MaximumDCBusVoltage := 44;		 // Test
+	AxisMotorCfg.ParMotorSynchronous.Brake.Type := mcMSB_USE;      // Enable motor brake
 	AxisMotorCfg.ParMotorSynchronous.Brake.Used.NominalCurrent := 0;		 // Unit (A) Motor holding brake: Rated current
 	AxisMotorCfg.ParMotorSynchronous.Brake.Used.NominalTorque := 0;		 // Unit (Nm) Motor holding brake: Rated torque
 	AxisMotorCfg.ParMotorSynchronous.Brake.Used.ActivationDelay := 0;		 // Unit (s) Motor holding brake: Engaging delay

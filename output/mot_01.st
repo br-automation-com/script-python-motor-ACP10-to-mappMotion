@@ -1,5 +1,5 @@
 // --------------------------------------------------------------- 
-// Auto converted with version 1 on 2023-09-04 11:35:16.469949
+// Auto converted with version 1 on 2023-09-05 16:33:11.559092
 // --------------------------------------------------------------- 
 ACTION mot_01:
 	// Parameter data for Siemens 1PH8103-1MF02-0GB2-Z (Zentralantrieb) PT1000
@@ -7,6 +7,9 @@ ACTION mot_01:
 	// Motor compatibility is set fixed to 0x0203. Old value was := 0x0203;		 // Motor: Software compatibility
 	// Winding connection is set fixed to 1. Old values was := 1;		 // Motor: Winding connection
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.NumberOfPolePairs := 2;		 // Motor: Number of pole-pairs
+	AxisMotorCfg.ParMotorInduction.Motor.StarEquivalentCircuit.VoltageLimitation.Type := mcMIMSECVL_USE;     // Enable voltage limitation
+	AxisMotorCfg.ParMotorInduction.Motor.StarEquivalentCircuit.VoltageLimitation.Used.MaximumDCBusVoltage := 44;		 // Test
+	AxisMotorCfg.ParMotorInduction.Brake.Type := mcMIB_USE;      // Enable motor brake
 	AxisMotorCfg.ParMotorInduction.Brake.Used.NominalCurrent := 0;		 // Unit (A) Motor holding brake: Rated current
 	AxisMotorCfg.ParMotorInduction.Brake.Used.NominalTorque := 0;		 // Unit (Nm) Motor holding brake: Rated torque
 	AxisMotorCfg.ParMotorInduction.Brake.Used.ActivationDelay := 0;		 // Unit (s) Motor holding brake: Engaging delay
