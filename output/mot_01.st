@@ -1,10 +1,11 @@
 // --------------------------------------------------------------- 
-// Auto converted with version 1 on 2023-09-05 16:33:11.559092
+// Auto converted with version 1 on 2023-09-11 15:00:32.462583
 // --------------------------------------------------------------- 
 ACTION mot_01:
 	// Parameter data for Siemens 1PH8103-1MF02-0GB2-Z (Zentralantrieb) PT1000
 	// Motor type is induction
-	// Motor compatibility is set fixed to 0x0203. Old value was := 0x0203;		 // Motor: Software compatibility
+	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureSensor.Type := mcMMTS_THERM; 	// Temperature sensor is thermistor
+	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureSensor.Thermistor.TemperatureSensorInterface := mcMMTSTTSI_ENC_CON_WRD;		 // Temperature sensor interface	// Motor compatibility is set fixed to 0x0203. Old value was := 0x0203;		 // Motor: Software compatibility
 	// Winding connection is set fixed to 1. Old values was := 1;		 // Motor: Winding connection
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.NumberOfPolePairs := 2;		 // Motor: Number of pole-pairs
 	AxisMotorCfg.ParMotorInduction.Motor.StarEquivalentCircuit.VoltageLimitation.Type := mcMIMSECVL_USE;     // Enable voltage limitation
@@ -25,6 +26,7 @@ ACTION mot_01:
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureSensor.Thermistor.TemperatureT6 := 166.25;		 // Temperatursensor: Parameter 9 166.25
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureSensor.Thermistor.TemperatureT7 := 200;		 // Temperatursensor: Parameter 10 200
 	// WARNING: MOTOR_THERMAL_CONST is not supported with MOTOR_COMPATIBILITY = 0x0203. Use MOTOR_TAU_THERM instead! Old value was := 30;		 // Unit (s) Motor: Thermische Zeitkonstante (f“ºr MOTOR_COMPATIBILITY 0x0202)
+	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureSensor.Thermistor.TemperatureSensorInterface := mcMMTSTTSI_ENC_CON_WRD;		 // Unit (s) Test
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.NominalVoltage := 412;		 // Unit (V) Motor: Rated voltage (alt: 350)
 // ERROR: MOTOR_VOLTAGE_CONST not found in conversion table
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.NominalSpeed := 1750;		 // Unit (1/min) Motor: Rated speed (alt: 1500)
@@ -47,6 +49,6 @@ ACTION mot_01:
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.MagnetizingCurrent := 6.5;		 // Unit (A) Motor: Magnetizing current (alt: 5.4)
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.CurrentBased.ThermalTimeConstant := 0;		 // Unit (s) Motor: Thermal time constant
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.CurrentBased.LimitTemperature := 110;		 // Unit (∞C) Temperature sensor: Limit temperature
-// ERROR: ENCOD_TYPE not found in conversion table
-// ERROR: SCALE_ENCOD_INCR not found in conversion table
+	// WARNING: Encoder type is not supported by the script since it was moved out of the motor configuration one level up into the inverter configuration := ncINC;		 // Encoder1: Type
+	// WARNING: Encoder type is not supported by the script since it was moved out of the motor configuration one level up into the inverter configuration := 33554432;		 // Encoder1: Encoder scaling: increments per SCALE_ENCOD_MOTOR_REV motor revolutions
 END_ACTION

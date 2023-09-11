@@ -13,6 +13,11 @@ The script generates a corresponding structure text file with an action that ass
 ## Requirements
 * Python 3.x
 
+## Limitations
+The script has the following known limitations
+
+* Encoder configuration (ENCOD_TYPE, SCALE_ENCOD_INCR) is not supported right now because it was moved out of the motor configuration and moved up one level into the inverter configuration. 
+
 ## Additional Information
 
 For a conversion between ACP10 parameters and mappMotions also see [this](./refs/refs_motor_conv_sync.md) and [this](./refs/refs_motor_conv_ind.md) table.

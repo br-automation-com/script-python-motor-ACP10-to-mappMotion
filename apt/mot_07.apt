@@ -57,5 +57,6 @@
       <Parameter Name="SCALE_ENCOD_INCR" ID="109" Value="33554432" Description="Encoder1: Encoder scaling: increments per SCALE_ENCOD_MOTOR_REV motor revolutions" />
     </Group>
     <Parameter Name="PHASING_MODE" ID="276" Value="0" Description="Motor: Phasing: Mode" />
+    <Parameter Name="PHASING_CURR" ID="276" Value="876" Description="Test" />
   </Root>
 </AcoposParameterTable>

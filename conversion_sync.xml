@@ -3,6 +3,9 @@
     <MOTOR_COMPATIBILITY Entry="// Motor compatibility is set fixed to 0x0203. Old value was"  />
     <MOTOR_WIND_CONNECT Entry="// Winding connection is set fixed to 1. Old values was"  />
     <MOTOR_THERMAL_CONST Entry="// WARNING: MOTOR_THERMAL_CONST is not supported with MOTOR_COMPATIBILITY = 0x0203. Use MOTOR_TAU_THERM instead! Old value was" />
+    <ENCOD_TYPE Entry="// WARNING: Encoder type is not supported by the script since it was moved out of the motor configuration one level up into the inverter configuration" />
+    <SCALE_ENCOD_INCR Entry="// WARNING: Encoder scaling is not supported by the script since it was moved out of the motor configuration one level up into the inverter configuration" />
+    <MOTOR_THERMAL_CONST Entry="// WARNING: MOTOR_THERMAL_CONST is not supported with MOTOR_COMPATIBILITY = 0x0203. Use MOTOR_TAU_THERM instead! Old value was" />
     <MOTOR_POLEPAIRS Entry="Motor.Default.NumberOfPolePairs"  />
     <MOTOR_SPEED_RATED Entry="Motor.Default.NominalSpeed"  />
     <MOTOR_SPEED_MAX Entry="Motor.Default.MaximumSpeed"  />
@@ -19,26 +22,27 @@
     <MOTOR_STATOR_INDUCTANCE Entry="Motor.Default.StatorInductance"  />
     <MOTOR_INERTIA Entry="Motor.Default.MomentOfInertia"  />
     <MOTOR_AMB_TEMP_RATED Entry="Motor.Default.NominalAmbientTemperature"  />
-    <MOTOR_UDC_MAX Entry="Motor.Default.MaximumDCBusVoltage" Dependency="VoltageLimitation" />
-    <MOTOR_COMMUT_OFFSET Entry="Motor.Default.EncoderMounting.Angle.UserDefined.CommutationOffset"  />
-    <PHASING_CURR Entry="Motor.Default.EncoderMounting.Angle.Undefined.AutomaticIdentification.Saturation.PhasingCurrent"  />
-    <PHASING_TIME Entry="Motor.Default.EncoderMounting.Angle.Undefined.AutomaticIdentification.Dither.PhasingTime"  />
-    <MOTOR_TEMPSENS_LIM Entry="Motor.Default.TemperatureSensor.Thermistor.LimitTemperature"  />
-    <MOTOR_TEMPSENS_PAR1 Entry="Motor.Default.TemperatureSensor.Thermistor.ResistanceR0"  />
-    <MOTOR_TEMPSENS_PAR2 Entry="Motor.Default.TemperatureSensor.Thermistor.ResistanceR7"  />
-    <MOTOR_TEMPSENS_PAR3 Entry="Motor.Default.TemperatureSensor.Thermistor.TemperatureT0"  />
-    <MOTOR_TEMPSENS_PAR4 Entry="Motor.Default.TemperatureSensor.Thermistor.TemperatureT1"  />
-    <MOTOR_TEMPSENS_PAR5 Entry="Motor.Default.TemperatureSensor.Thermistor.TemperatureT2"  />
-    <MOTOR_TEMPSENS_PAR6 Entry="Motor.Default.TemperatureSensor.Thermistor.TemperatureT3"  />
-    <MOTOR_TEMPSENS_PAR7 Entry="Motor.Default.TemperatureSensor.Thermistor.TemperatureT4"  />
-    <MOTOR_TEMPSENS_PAR8 Entry="Motor.Default.TemperatureSensor.Thermistor.TemperatureT5"  />
-    <MOTOR_TEMPSENS_PAR9 Entry="Motor.Default.TemperatureSensor.Thermistor.TemperatureT6"  />
-    <MOTOR_TEMPSENS_PAR10 Entry="Motor.Default.TemperatureSensor.Thermistor.TemperatureT7"  />
-    <MOTOR_TEMPSENS_PAR1 Entry="Motor.Default.TemperatureSensor.SwitchingPTCThermistor.NominalResponseTemperature"  />
-    <MOTOR_TEMPSENS_PAR2 Entry="Motor.Default.TemperatureSensor.SwitchingPTCThermistor.MinimumResistance"  />
-    <MOTOR_TEMPSENS_PAR3 Entry="Motor.Default.TemperatureSensor.SwitchingPTCThermistor.NominalResponseTemperature"  />
-    <MOTOR_TEMPSENS_PAR1 Entry="Motor.Default.TemperatureSensor.Thermoswitches.NominalResponseTemperature"  />
-    <MOTOR_TEMPSENS_PAR10 Entry="Motor.Default.TemperatureSensor.Thermoswitches.SwitchingStateOnOvertemperature"  />
+    <MOTOR_UDC_MAX Entry="Motor.Default.VoltageLimitation.Used.MaximumDCBusVoltage" Dependency="VoltageLimitation" />
+    <MOTOR_COMMUT_OFFSET Entry="Motor.Default.EncoderMounting.Angle.UserDefined.CommutationOffset" Dependency="EncoderMountingUser" />
+    <PHASING_CURR Entry="Motor.Default.EncoderMounting.Angle.Undefined.AutomaticIdentification.%PHASING_MODE%.PhasingCurrent" Dependency="EncoderMountingUndefined" />
+    <PHASING_TIME Entry="Motor.Default.EncoderMounting.Angle.Undefined.AutomaticIdentification.%PHASING_MODE%.PhasingTime" Dependency="EncoderMountingUndefined" />
+    <MOTOR_TEMPSENS_INT Entry="Motor.Default.TemperatureSensor.%TEMP_SENSOR%.TemperatureSensorInterface"  />
+    <MOTOR_TEMPSENS_LIM Entry="Motor.Default.TemperatureSensor.%TEMP_SENSOR%.LimitTemperature"  />
+    <MOTOR_TEMPSENS_PAR1 Entry="Motor.Default.TemperatureSensor.%TEMP_SENSOR%.ResistanceR0"  />
+    <MOTOR_TEMPSENS_PAR2 Entry="Motor.Default.TemperatureSensor.%TEMP_SENSOR%.ResistanceR7"  />
+    <MOTOR_TEMPSENS_PAR3 Entry="Motor.Default.TemperatureSensor.%TEMP_SENSOR%.TemperatureT0"  />
+    <MOTOR_TEMPSENS_PAR4 Entry="Motor.Default.TemperatureSensor.%TEMP_SENSOR%.TemperatureT1"  />
+    <MOTOR_TEMPSENS_PAR5 Entry="Motor.Default.TemperatureSensor.%TEMP_SENSOR%.TemperatureT2"  />
+    <MOTOR_TEMPSENS_PAR6 Entry="Motor.Default.TemperatureSensor.%TEMP_SENSOR%.TemperatureT3"  />
+    <MOTOR_TEMPSENS_PAR7 Entry="Motor.Default.TemperatureSensor.%TEMP_SENSOR%.TemperatureT4"  />
+    <MOTOR_TEMPSENS_PAR8 Entry="Motor.Default.TemperatureSensor.%TEMP_SENSOR%.TemperatureT5"  />
+    <MOTOR_TEMPSENS_PAR9 Entry="Motor.Default.TemperatureSensor.%TEMP_SENSOR%.TemperatureT6"  />
+    <MOTOR_TEMPSENS_PAR10 Entry="Motor.Default.TemperatureSensor.%TEMP_SENSOR%.TemperatureT7"  />
+    <MOTOR_TEMPSENS_PAR1 Entry="Motor.Default.TemperatureSensor.%TEMP_SENSOR%.NominalResponseTemperature"  />
+    <MOTOR_TEMPSENS_PAR2 Entry="Motor.Default.TemperatureSensor.%TEMP_SENSOR%.MinimumResistance"  />
+    <MOTOR_TEMPSENS_PAR3 Entry="Motor.Default.TemperatureSensor.%TEMP_SENSOR%.NominalResponseTemperature"  />
+    <MOTOR_TEMPSENS_PAR1 Entry="Motor.Default.TemperatureSensor.%TEMP_SENSOR%.NominalResponseTemperature"  />
+    <MOTOR_TEMPSENS_PAR10 Entry="Motor.Default.TemperatureSensor.%TEMP_SENSOR%.SwitchingStateOnOvertemperature"  />
     <MOTOR_WIND_TEMP_MAX Entry="Motor.Default.TemperatureModel.CurrentBased.LimitTemperature"  />
     <MOTOR_WIND_CROSS_SECT Entry="Motor.Default.TemperatureModel.CurrentBased.WindingCrossSection"  />
     <PIDENT_THERM_TRIP_TIME Entry="Motor.Default.TemperatureModel.CurrentBased.ThermalTrippingTime"  />

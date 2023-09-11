@@ -28,6 +28,7 @@
         <Parameter Name="MOTOR_TEMPSENS_PAR9" ID="72" Value="166.25" Description="Temperatursensor: Parameter 9 166.25" />
         <Parameter Name="MOTOR_TEMPSENS_PAR10" ID="73" Value="200" Description="Temperatursensor: Parameter 10 200" />
         <Parameter Name="MOTOR_THERMAL_CONST" ID="75" Value="30" Unit="s" Description="Motor: Thermische Zeitkonstante (fÒ¼r MOTOR_COMPATIBILITY 0x0202)" />
+        <Parameter Name="MOTOR_TEMPSENS_TYPE" ID="75" Value="8193" Unit="s" Description="Test" />
       </Group>
       <Group Name="Motor parameters">
         <Parameter Name="MOTOR_VOLTAGE_RATED" ID="48" Value="412" Unit="V" Description="Motor: Rated voltage (alt: 350)" />

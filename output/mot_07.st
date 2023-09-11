@@ -1,14 +1,15 @@
 // --------------------------------------------------------------- 
-// Auto converted with version 1 on 2023-09-05 16:33:11.569041
+// Auto converted with version 1 on 2023-09-11 15:00:32.469738
 // --------------------------------------------------------------- 
 ACTION mot_07:
 	// Parameter data for 1FK7083-5AF71
 	// Motor type is synchronous
+		AxisMotorCfg.ParMotorSynchronous.Motor.Default.EncoderMounting.Angle.Undefined.AutomaticIdentification.Type := mcMSMDEMAUAI_SAT; 	// Phasing mode is saturation
 	// Motor compatibility is set fixed to 0x0203. Old value was := 0x0203;		 // Motor: Software compatibility
 	// Winding connection is set fixed to 1. Old values was := 1;		 // Motor: Winding connection
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.NumberOfPolePairs := 4;		 // Motor: Number of pole-pairs
-	AxisMotorCfg.ParMotorSynchronous.Motor.Default.VoltageLimitation.Used := mcMSMDVL_USE;     // Enable voltage limitation
-	AxisMotorCfg.ParMotorSynchronous.Motor.Default.MaximumDCBusVoltage := 44;		 // Test
+	AxisMotorCfg.ParMotorSynchronous.Motor.Default.VoltageLimitation.Type := mcMSMDVL_USE;     // Enable voltage limitation
+	AxisMotorCfg.ParMotorSynchronous.Motor.Default.VoltageLimitation.Used.MaximumDCBusVoltage := 44;		 // Test
 	AxisMotorCfg.ParMotorSynchronous.Brake.Type := mcMSB_USE;      // Enable motor brake
 	AxisMotorCfg.ParMotorSynchronous.Brake.Used.NominalCurrent := 0;		 // Unit (A) Motor holding brake: Rated current
 	AxisMotorCfg.ParMotorSynchronous.Brake.Used.NominalTorque := 0;		 // Unit (Nm) Motor holding brake: Rated torque
@@ -40,10 +41,12 @@ ACTION mot_07:
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.StatorResistance := 0.8;		 // Unit (Ohm) Motor: Stator resistance
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.StatorInductance := 0.012;		 // Unit (Henry) Motor: Stator inductance
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.MomentOfInertia := 0.0273;		 // Unit (kgm²) Motor: Moment of inertia
+	AxisMotorCfg.ParMotorSynchronous.Motor.Default.EncoderMounting.Angle.Type := mcMSMDEMA_USRDEF;     // Encoder mounting is user defined
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.EncoderMounting.Angle.UserDefined.CommutationOffset := 0;		 // Unit (rad) Motor: Commutation offset
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.TemperatureModel.CurrentBased.ThermalTimeConstant := 3000;		 // Unit (s) Motor: Thermal time constant
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.TemperatureModel.CurrentBased.LimitTemperature := 110;		 // Unit (°C) Temperature sensor: Limit temperature
-// ERROR: ENCOD_TYPE not found in conversion table
-// ERROR: SCALE_ENCOD_INCR not found in conversion table
-// ERROR: PHASING_MODE not found in conversion table
+	// WARNING: Encoder type is not supported by the script since it was moved out of the motor configuration one level up into the inverter configuration := ncINC;		 // Encoder1: Type
+	// WARNING: Encoder type is not supported by the script since it was moved out of the motor configuration one level up into the inverter configuration := 33554432;		 // Encoder1: Encoder scaling: increments per SCALE_ENCOD_MOTOR_REV motor revolutions
+	AxisMotorCfg.ParMotorSynchronous.Motor.Default.EncoderMounting.Angle.Type := mcMSMDEMA_UDEF;     // Encoder mounting is undefined
+	AxisMotorCfg.ParMotorSynchronous.Motor.Default.EncoderMounting.Angle.Undefined.AutomaticIdentification.Saturation.PhasingCurrent := 876;		 // Test
 END_ACTION

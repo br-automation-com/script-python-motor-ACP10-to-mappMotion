@@ -1,5 +1,5 @@
 // --------------------------------------------------------------- 
-// Auto converted with version 1 on 2023-09-05 16:33:11.554082
+// Auto converted with version 1 on 2023-09-11 15:00:32.456666
 // --------------------------------------------------------------- 
 ACTION motvsSIE:
 	// Motor type is synchronous
@@ -40,6 +40,7 @@ ACTION motvsSIE:
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.StatorResistance := 0.288;		 // Unit (Ohm) Motor: Stator resistance
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.StatorInductance := 0.0066;		 // Unit (Henry) Motor: Stator inductance
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.MomentOfInertia := 0.0104;		 // Unit (kgm²) Motor: Moment of inertia
+	AxisMotorCfg.ParMotorSynchronous.Motor.Default.EncoderMounting.Angle.Type := mcMSMDEMA_USRDEF;     // Encoder mounting is user defined
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.EncoderMounting.Angle.UserDefined.CommutationOffset := 3.1415926;		 // Unit (rad) Motor: Commutation offset
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.TemperatureModel.CurrentBased.ThermalTimeConstant := 560;		 // Unit (s) Motor: Thermal time constant
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.TemperatureModel.CurrentBased.LimitTemperature := 145;		 // Unit (°C) Temperature sensor: Limit temperature

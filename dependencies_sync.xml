@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-    <VoltageLimitation Entry="Motor.Default.VoltageLimitation.Used := mcMSMDVL_USE;     // Enable voltage limitation"  />
+    <VoltageLimitation Entry="Motor.Default.VoltageLimitation.Type := mcMSMDVL_USE;     // Enable voltage limitation"  />
+    <EncoderMountingUser Entry="Motor.Default.EncoderMounting.Angle.Type := mcMSMDEMA_USRDEF;     // Encoder mounting is user defined"  />
+    <EncoderMountingUndefined Entry="Motor.Default.EncoderMounting.Angle.Type := mcMSMDEMA_UDEF;     // Encoder mounting is undefined"  />
     <Brake Entry="Brake.Type := mcMSB_USE;      // Enable motor brake"  />
     <BrakeVoltageControlled Entry="Brake.Used.ControlMode.Type := mcMSBUCM_V_CTRL;      // Brake voltage control mode"  />
     <BrakeLimits Entry="Brake.Used.Limits.Type :=  mcMSBUL_USE;      // Holding brake limits"  />
