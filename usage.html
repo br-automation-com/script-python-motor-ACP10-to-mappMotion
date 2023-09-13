@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="installation.html">
       
       <link rel="icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
@@ -65,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#usage" class="md-skip">
           Skip to content
         </a>
       
@@ -225,74 +229,77 @@
 
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Usage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="usage.html" class="md-nav__link md-nav__link--active">
+        Usage
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    Output
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    Limitations
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
   
     <li class="md-nav__item">
       <a href="installation.html" class="md-nav__link">
         Python Installation
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          References
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
-          References
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="refs/refs_motor_conv_sync.html" class="md-nav__link">
-        Synchronous motor table conversion
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="refs/refs_motor_conv_ind.html" class="md-nav__link">
-        Induction motor table conversion
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -332,26 +339,25 @@
 
   <h1>Usage</h1>
 
-<h2 id="introduction">Introduction</h2>
-<p>This script converts ACP10 motor table into a variable structure that can be used with mappMotion. The conversion is done automatically and may contain errors or miss some data. It is absolutely crucial to verify the values after the conversion. Make sure to check the comments in the corresponding files since they contain import information about the converted data.</p>
 <h2 id="usage">Usage</h2>
 <p>Copy one or more motor table files into the directory "apt". Open a command window and execute the following command to start the conversion.</p>
 <pre><code>python ./start.py
 </code></pre>
 <p>The script generates a corresponding structure text file with an action that assigns all previous parameters to a variable structure with the name ParMotorSynchronous (McCfgMotSynType) for synchronous motors and ParMotorInduction (McCfgMotInductType) for induction motors. The variable types are part of the mappMotion library McAcpAx. The variables can be connected to the function block MC_BR_ProcessConfig (9c2eadae-8494-4e9a-b305-0afa2dabf1d4) that changes the motor configuration.</p>
-<h2 id="requirements">Requirements</h2>
+<h2 id="output">Output</h2>
+<p>The script generates a structure text file with an action an the converted variable structure. Pay attention to the additional comments. </p>
 <ul>
-<li>Python 3.x</li>
+<li><strong>INFO</strong>: Just useful information.</li>
+<li><strong>WARNING</strong>: May or may not be a problem. Double check and delete when not relevant or corrected otherwise.</li>
+<li><strong>ERROR</strong>: This needs attention. In most cases parameters were not translated and this can cause damage to the motor when not dealt with accordingly.</li>
 </ul>
+<p><img alt="" src="images/sample_output.png" /></p>
 <h2 id="limitations">Limitations</h2>
 <p>The script has the following known limitations</p>
 <ul>
 <li>Encoder configuration (ENCOD_TYPE, SCALE_ENCOD_INCR) is not supported right now because it was moved out of the motor configuration and moved up one level into the inverter configuration.</li>
 <li>Motor temperature sensor reference MOTOR_TEMPMODEL_REFSENS must be set after temperature model TEMP_MOTOR_MODEL_MODE</li>
 </ul>
-<h2 id="additional-information">Additional Information</h2>
-<p>For a conversion between ACP10 parameters and mappMotions also see <a href="refs/refs_motor_conv_sync.html">this</a> and <a href="refs/refs_motor_conv_ind.html">this</a> table.</p>
-<p>For a complete sample how to change the motor parameters follow <a href="https://github.com/br-automation-com/mappMotion-Samples">this</a> link.</p>
 
 
 
