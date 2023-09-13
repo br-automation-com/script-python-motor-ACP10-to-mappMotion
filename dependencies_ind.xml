@@ -3,5 +3,8 @@
     <VoltageLimitation Entry="Motor.StarEquivalentCircuit.VoltageLimitation.Type := mcMIMSECVL_USE;     // Enable voltage limitation"  />
     <Brake Entry="Brake.Type := mcMIB_USE;      // Enable motor brake"  />
     <BrakeVoltageControlled Entry="Brake.Used.ControlMode.Type := mcMIBUCM_V_CTRL;      // Brake voltage control mode"  />
-    <BrakeLimits Entry="Brake.Used.Limits.Type :=  mcMIBUL_USE;      // Holding brake limits"  />
+    <BrakeLimits Entry="Brake.Used.Limits.Type :=  mcMIBUL_USE;      // Holding brake limits are used"  />
+    <Encoder Entry="Encoder.Type :=  mcMIE_USE; // Encoder"  />
+    <EncoderTempSensor Entry="Encoder.Used.TemperatureSensor.Type := mcMIEUTS_USE; // Encoder temperature sensor"  />
+    <Encoder Entry="Gearbox.Type := mcMSG_USE; // Gearbox"  />
 </root>

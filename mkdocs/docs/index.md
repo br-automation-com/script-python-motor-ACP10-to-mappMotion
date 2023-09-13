@@ -16,7 +16,8 @@ The script generates a corresponding structure text file with an action that ass
 ## Limitations
 The script has the following known limitations
 
-* Encoder configuration (ENCOD_TYPE, SCALE_ENCOD_INCR) is not supported right now because it was moved out of the motor configuration and moved up one level into the inverter configuration. 
+* Encoder configuration (ENCOD_TYPE, SCALE_ENCOD_INCR) is not supported right now because it was moved out of the motor configuration and moved up one level into the inverter configuration.
+* Motor temperature sensor reference MOTOR_TEMPMODEL_REFSENS must be set after temperature model TEMP_MOTOR_MODEL_MODE
 
 ## Additional Information
 

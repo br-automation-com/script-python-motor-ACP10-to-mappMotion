@@ -5,5 +5,8 @@
     <EncoderMountingUndefined Entry="Motor.Default.EncoderMounting.Angle.Type := mcMSMDEMA_UDEF;     // Encoder mounting is undefined"  />
     <Brake Entry="Brake.Type := mcMSB_USE;      // Enable motor brake"  />
     <BrakeVoltageControlled Entry="Brake.Used.ControlMode.Type := mcMSBUCM_V_CTRL;      // Brake voltage control mode"  />
-    <BrakeLimits Entry="Brake.Used.Limits.Type :=  mcMSBUL_USE;      // Holding brake limits"  />
+    <BrakeLimits Entry="Brake.Used.Limits.Type :=  mcMSBUL_USE;      // Holding brake limits are used"  />
+    <Encoder Entry="Encoder.Type :=  mcMSE_USE; // Encoder"  />
+    <EncoderTempSensor Entry="Encoder.Used.TemperatureSensor.Type := mcMSEUTS_USE; // Encoder temperature sensor"  />
+    <Encoder Entry="Gearbox.Type := mcMSG_USE; // Gearbox"  />
 </root>
