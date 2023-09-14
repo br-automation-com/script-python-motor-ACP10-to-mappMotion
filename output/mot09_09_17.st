@@ -1,9 +1,9 @@
 // --------------------------------------------------------------- 
-// Auto converted with version 1 on 2023-09-13 13:47:18.215264
+// Auto converted with version 1 on 2023-09-14 13:52:36.787002
 // --------------------------------------------------------------- 
 ACTION mot09_09_17:
-	// Parameter data for 1FK7101-5AC1
 	// INFO: Motor type is synchronous
+	// Parameter data for 1FK7101-5AC1
 	// WARNING: Motor compatibility (MOTOR_COMPATIBILITY / 31) is set fixed to 0x0203. Old value was := 0x0203;		 // Motor: Software compatibility
 	// WARNING: Winding connection (MOTOR_WIND_CONNECT / 46) is set fixed to 1. Old values was := 1;		 // Motor: Winding connection
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.NumberOfPolePairs := 4;		 // Motor: Number of pole-pairs
@@ -34,12 +34,12 @@ ACTION mot09_09_17:
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.StallCurrent := 9.6;		 // Unit (A) Motor: Stall current
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.NominalCurrent := 9.6;		 // Unit (A) Motor: Rated current
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.PeakCurrent := 40;		 // Unit (A) Motor: Peak current
-	AxisMotorCfg.ParMotorSynchronous.Motor.Default.TemperatureModel.CurrentAndSpeedBased.CalculationMethod.SecondOrderThermalNetwork.WindingCrossSection := 0;		 // Unit (mm²) Motor: Line cross section
+	AxisMotorCfg.ParMotorSynchronous.Motor.Default.TemperatureModel.TEMP_MOTOR_MODEL_MODE.CalculationMethod.SecondOrderThermalNetwork.WindingCrossSection := 0;		 // Unit (mm²) Motor: Line cross section
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.StatorResistance := 0.36;		 // Unit (Ohm) Motor: Stator resistance
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.StatorInductance := 0.0073;		 // Unit (Henry) Motor: Stator inductance
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.MomentOfInertia := 0.00923;		 // Unit (kgm²) Motor: Moment of inertia
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.EncoderMounting.Angle.Type := mcMSMDEMA_USRDEF;     // Encoder mounting is user defined
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.EncoderMounting.Angle.UserDefined.CommutationOffset := 3.1415926;		 // Unit (rad) Motor: Commutation offset
-	AxisMotorCfg.ParMotorSynchronous.Motor.Default.TemperatureModel.CurrentAndSpeedBased.CalculationMethod.SecondOrderThermalNetwork.ThermalTimeConstant := 3000;		 // Unit (s) Motor: Thermal time constant
-	AxisMotorCfg.ParMotorSynchronous.Motor.Default.TemperatureModel.CurrentAndSpeedBased.LimitTemperature := 110;		 // Unit (°C) Temperature sensor: Limit temperature
+	AxisMotorCfg.ParMotorSynchronous.Motor.Default.TemperatureModel.TEMP_MOTOR_MODEL_MODE.CalculationMethod.SecondOrderThermalNetwork.ThermalTimeConstant := 3000;		 // Unit (s) Motor: Thermal time constant
+	AxisMotorCfg.ParMotorSynchronous.Motor.Default.TemperatureModel.TEMP_MOTOR_MODEL_MODE.LimitTemperature := 110;		 // Unit (°C) Temperature sensor: Limit temperature
 END_ACTION

@@ -1,9 +1,9 @@
 // --------------------------------------------------------------- 
-// Auto converted with version 1 on 2023-09-13 13:47:18.513854
+// Auto converted with version 1 on 2023-09-14 13:52:36.838940
 // --------------------------------------------------------------- 
 ACTION mot_04:
-	// Parameter data for SK5382
 	// INFO: Motor type is induction
+	// Parameter data for SK5382
 	// WARNING: Motor compatibility (MOTOR_COMPATIBILITY / 31) is set fixed to 0x0203. Old value was := 0x0203;		 // Motor: Software compatibility
 	// WARNING: Winding connection (MOTOR_WIND_CONNECT / 46) is set fixed to 1. Old values was := 1;		 // Motor: Winding connection
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.NumberOfPolePairs := 2;		 // Motor: Number of pole-pairs
@@ -34,7 +34,7 @@ ACTION mot_04:
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.StallCurrent := 7.1;		 // Unit (A) Motor: Stall current
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.NominalCurrent := 7.1;		 // Unit (A) Motor: Rated current
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.PeakCurrent := 31.24;		 // Unit (A) Motor: Peak current
-	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.CurrentAndSpeedBased.CalculationMethod.SecondOrderThermalNetwork.WindingCrossSection := 0;		 // Unit (mm²) Motor: Line cross section
+	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.TEMP_MOTOR_MODEL_MODE.CalculationMethod.SecondOrderThermalNetwork.WindingCrossSection := 0;		 // Unit (mm²) Motor: Line cross section
 	AxisMotorCfg.ParMotorInduction.Motor.StarEquivalentCircuit.StatorResistance := 2.32;		 // Unit (Ohm) Motor: Stator resistance
 	AxisMotorCfg.ParMotorInduction.Motor.StarEquivalentCircuit.StatorInductance := 0.01195;		 // Unit (Henry) Motor: Stator inductance
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.MomentOfInertia := 0;		 // Unit (kgm²) Motor: Moment of inertia
@@ -43,7 +43,7 @@ ACTION mot_04:
 	AxisMotorCfg.ParMotorInduction.Motor.StarEquivalentCircuit.RotorInductance := 0.01195;		 // Unit (Henry) Motor: Rotor inductance
 	AxisMotorCfg.ParMotorInduction.Motor.StarEquivalentCircuit.MutualInductance := 0.2;		 // Unit (Henry) Motor: Mutual inductance
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.MagnetizingCurrent := 3.42;		 // Unit (A) Motor: Magnetizing current
-	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.CurrentAndSpeedBased.CalculationMethod.SecondOrderThermalNetwork.ThermalTimeConstant := 30;		 // Unit (s) Motor: Thermal time constant
-	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.CurrentAndSpeedBased.LimitTemperature := 110;		 // Unit (°C) Temperature sensor: Limit temperature
-// ERROR: BRAKE_MODE not found in conversion table. Old value was 5
+	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.TEMP_MOTOR_MODEL_MODE.CalculationMethod.SecondOrderThermalNetwork.ThermalTimeConstant := 30;		 // Unit (s) Motor: Thermal time constant
+	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.TEMP_MOTOR_MODEL_MODE.LimitTemperature := 110;		 // Unit (°C) Temperature sensor: Limit temperature
+	// WARNING: Use function block MC_BR_BrakeSetPar_AcpAx to control brake behavior := 5;		 // Motor holding brake: Mode (Bremse in Automatik und Ueberwachung aus, da ueber Relais angesteuert)
 END_ACTION

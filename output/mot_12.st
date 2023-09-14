@@ -1,9 +1,9 @@
 // --------------------------------------------------------------- 
-// Auto converted with version 1 on 2023-09-13 13:47:18.886520
+// Auto converted with version 1 on 2023-09-14 13:52:36.920780
 // --------------------------------------------------------------- 
 ACTION mot_12:
-	// Parameter data for SIMENS 1LA7107
 	// INFO: Motor type is induction
+	// Parameter data for SIMENS 1LA7107
 	// WARNING: Motor compatibility (MOTOR_COMPATIBILITY / 31) is set fixed to 0x0203. Old value was := 0x0203;		 // Motor: Software compatibility
 	// WARNING: Winding connection (MOTOR_WIND_CONNECT / 46) is set fixed to 1. Old values was := 1;		 // Motor: Winding connection
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.NumberOfPolePairs := 2;		 // Motor: Number of pole-pairs
@@ -34,7 +34,7 @@ ACTION mot_12:
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.StallCurrent := 6.4;		 // Unit (A) Motor: Stall current
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.NominalCurrent := 6.4;		 // Unit (A) Motor: Rated current
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.PeakCurrent := 32.11;		 // Unit (A) Motor: Peak current
-	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.CurrentAndSpeedBased.CalculationMethod.SecondOrderThermalNetwork.WindingCrossSection := 10;		 // Unit (mm²) Motor: Line cross section
+	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.TEMP_MOTOR_MODEL_MODE.CalculationMethod.SecondOrderThermalNetwork.WindingCrossSection := 10;		 // Unit (mm²) Motor: Line cross section
 	AxisMotorCfg.ParMotorInduction.Motor.StarEquivalentCircuit.StatorResistance := 1.956;		 // Unit (Ohm) Motor: Stator resistance
 	AxisMotorCfg.ParMotorInduction.Motor.StarEquivalentCircuit.StatorInductance := 0.01157;		 // Unit (Henry) Motor: Stator inductance
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.MomentOfInertia := 0.0055;		 // Unit (kgm²) Motor: Moment of inertia
@@ -43,8 +43,8 @@ ACTION mot_12:
 	AxisMotorCfg.ParMotorInduction.Motor.StarEquivalentCircuit.RotorInductance := 0.01157;		 // Unit (Henry) Motor: Rotor inductance
 	AxisMotorCfg.ParMotorInduction.Motor.StarEquivalentCircuit.MutualInductance := 0.2491;		 // Unit (Henry) Motor: Mutual inductance
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.MagnetizingCurrent := 3.66;		 // Unit (A) Motor: Magnetizing current
-	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.CurrentAndSpeedBased.CalculationMethod.SecondOrderThermalNetwork.ThermalTimeConstant := 300;		 // Unit (s) Motor: Thermal time constant
-	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.CurrentAndSpeedBased.LimitTemperature := 110;		 // Unit (°C) Temperature sensor: Limit temperature
+	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.TEMP_MOTOR_MODEL_MODE.CalculationMethod.SecondOrderThermalNetwork.ThermalTimeConstant := 300;		 // Unit (s) Motor: Thermal time constant
+	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.TEMP_MOTOR_MODEL_MODE.LimitTemperature := 110;		 // Unit (°C) Temperature sensor: Limit temperature
 	// WARNING: Encoder type is not supported by the script since it was moved out of the motor configuration one level up into the inverter configuration := ncINC;		 // Encoder1: Type
 	// WARNING: Encoder scaling is not supported by the script since it was moved out of the motor configuration one level up into the inverter configuration := 4096;		 // Encoder1: Encoder scaling: increments per SCALE_ENCOD_MOTOR_REV motor revolutions
 // ERROR: ENCOD_OUTPUT_FREQUENCY not found in conversion table. Old value was 120000

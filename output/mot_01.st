@@ -1,11 +1,11 @@
 // --------------------------------------------------------------- 
-// Auto converted with version 1 on 2023-09-13 13:47:18.313022
+// Auto converted with version 1 on 2023-09-14 13:52:36.805213
 // --------------------------------------------------------------- 
 ACTION mot_01:
-	// Parameter data for Siemens 1PH8103-1MF02-0GB2-Z (Zentralantrieb) PT1000
 	// INFO: Motor type is induction
-	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureSensor.Type := mcMMTS_THERM; 	// Temperature sensor is thermistor
-	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureSensor.Thermistor.TemperatureSensorInterface := mcMMTSTTSI_ENC_CON_WRD;		 // Temperature sensor interface	// WARNING: Motor compatibility (MOTOR_COMPATIBILITY / 31) is set fixed to 0x0203. Old value was := 0x0203;		 // Motor: Software compatibility
+	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureSensor.Type := mcMMTS_THERM;		// Temperature sensor is thermistor
+	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureSensor.Thermistor.TemperatureSensorInterface := mcMMTSTTSI_ENC_CON_WRD;		 // Temperature sensor interface	// Parameter data for Siemens 1PH8103-1MF02-0GB2-Z (Zentralantrieb) PT1000
+	// WARNING: Motor compatibility (MOTOR_COMPATIBILITY / 31) is set fixed to 0x0203. Old value was := 0x0203;		 // Motor: Software compatibility
 	// WARNING: Winding connection (MOTOR_WIND_CONNECT / 46) is set fixed to 1. Old values was := 1;		 // Motor: Winding connection
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.NumberOfPolePairs := 2;		 // Motor: Number of pole-pairs
 	AxisMotorCfg.ParMotorInduction.Motor.StarEquivalentCircuit.VoltageLimitation.Type := mcMIMSECVL_USE;     // Enable voltage limitation
@@ -37,7 +37,7 @@ ACTION mot_01:
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.StallCurrent := 12.7;		 // Unit (A) Motor: Stall current (alt: 13)
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.NominalCurrent := 12.7;		 // Unit (A) Motor: Rated current (alt: 13)
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.PeakCurrent := 70;		 // Unit (A) Motor: Peak current
-	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.CurrentAndSpeedBased.CalculationMethod.SecondOrderThermalNetwork.WindingCrossSection := 0;		 // Unit (mm²) Motor: Line cross section
+	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.TEMP_MOTOR_MODEL_MODE.CalculationMethod.SecondOrderThermalNetwork.WindingCrossSection := 0;		 // Unit (mm²) Motor: Line cross section
 	AxisMotorCfg.ParMotorInduction.Motor.StarEquivalentCircuit.StatorResistance := 0.831;		 // Unit (Ohm) Motor: Stator resistance (alt: 0.808)
 	AxisMotorCfg.ParMotorInduction.Motor.StarEquivalentCircuit.StatorInductance := 0.0041621;		 // Unit (Henry) Motor: Stator inductance (alt: 0.00438)
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.MomentOfInertia := 0.0172;		 // Unit (kgm²) Motor: Moment of inertia (alt: 0.228)
@@ -46,8 +46,8 @@ ACTION mot_01:
 	AxisMotorCfg.ParMotorInduction.Motor.StarEquivalentCircuit.RotorInductance := 0.0058243;		 // Unit (Henry) Motor: Rotor inductance (alt: 0.00438)
 	AxisMotorCfg.ParMotorInduction.Motor.StarEquivalentCircuit.MutualInductance := 0.08952;		 // Unit (Henry) Motor: Mutual inductance (alt: 0.1091)
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.MagnetizingCurrent := 6.5;		 // Unit (A) Motor: Magnetizing current (alt: 5.4)
-	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.CurrentAndSpeedBased.CalculationMethod.SecondOrderThermalNetwork.ThermalTimeConstant := 0;		 // Unit (s) Motor: Thermal time constant
-	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.CurrentAndSpeedBased.LimitTemperature := 110;		 // Unit (°C) Temperature sensor: Limit temperature
+	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.TEMP_MOTOR_MODEL_MODE.CalculationMethod.SecondOrderThermalNetwork.ThermalTimeConstant := 0;		 // Unit (s) Motor: Thermal time constant
+	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.TEMP_MOTOR_MODEL_MODE.LimitTemperature := 110;		 // Unit (°C) Temperature sensor: Limit temperature
 	// WARNING: Encoder type is not supported by the script since it was moved out of the motor configuration one level up into the inverter configuration := ncINC;		 // Encoder1: Type
 	// WARNING: Encoder scaling is not supported by the script since it was moved out of the motor configuration one level up into the inverter configuration := 33554432;		 // Encoder1: Encoder scaling: increments per SCALE_ENCOD_MOTOR_REV motor revolutions
 END_ACTION

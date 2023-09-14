@@ -1,10 +1,11 @@
 // --------------------------------------------------------------- 
-// Auto converted with version 1 on 2023-09-13 13:47:18.707189
+// Auto converted with version 1 on 2023-09-14 13:52:36.881596
 // --------------------------------------------------------------- 
 ACTION mot_07:
-	// Parameter data for 1FK7083-5AF71
 	// INFO: Motor type is synchronous
-	AxisMotorCfg.ParMotorSynchronous.Motor.Default.EncoderMounting.Angle.Undefined.AutomaticIdentification.Type := mcMSMDEMAUAI_SAT; 	// Phasing mode is saturation
+	AxisMotorCfg.ParMotorSynchronous.Motor.Default.EncoderMounting.Angle.Undefined.AutomaticIdentification.Type := mcMSMDEMAUAI_SAT;		// Phasing mode is saturation
+	AxisMotorCfg.ParMotorSynchronous.Motor.Default.TemperatureModel.Type := mcMMTM_NOT_USE;		// Temperature model is turned off
+	// Parameter data for 1FK7083-5AF71
 	// WARNING: Motor compatibility (MOTOR_COMPATIBILITY / 31) is set fixed to 0x0203. Old value was := 0x0203;		 // Motor: Software compatibility
 	// WARNING: Winding connection (MOTOR_WIND_CONNECT / 46) is set fixed to 1. Old values was := 1;		 // Motor: Winding connection
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.NumberOfPolePairs := 4;		 // Motor: Number of pole-pairs
@@ -37,14 +38,14 @@ ACTION mot_07:
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.StallCurrent := 8.6;		 // Unit (A) Motor: Stall current
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.NominalCurrent := 7.4;		 // Unit (A) Motor: Rated current
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.PeakCurrent := 37;		 // Unit (A) Motor: Peak current
-	AxisMotorCfg.ParMotorSynchronous.Motor.Default.TemperatureModel.CurrentAndSpeedBased.CalculationMethod.SecondOrderThermalNetwork.WindingCrossSection := 0;		 // Unit (mm²) Motor: Line cross section
+// ERROR: Temperature model does not match parameter MOTOR_WIND_CROSS_SECT
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.StatorResistance := 0.8;		 // Unit (Ohm) Motor: Stator resistance
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.StatorInductance := 0.012;		 // Unit (Henry) Motor: Stator inductance
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.MomentOfInertia := 0.0273;		 // Unit (kgm²) Motor: Moment of inertia
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.EncoderMounting.Angle.Type := mcMSMDEMA_USRDEF;     // Encoder mounting is user defined
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.EncoderMounting.Angle.UserDefined.CommutationOffset := 0;		 // Unit (rad) Motor: Commutation offset
-	AxisMotorCfg.ParMotorSynchronous.Motor.Default.TemperatureModel.CurrentAndSpeedBased.CalculationMethod.SecondOrderThermalNetwork.ThermalTimeConstant := 3000;		 // Unit (s) Motor: Thermal time constant
-	AxisMotorCfg.ParMotorSynchronous.Motor.Default.TemperatureModel.CurrentAndSpeedBased.LimitTemperature := 110;		 // Unit (°C) Temperature sensor: Limit temperature
+// ERROR: Temperature model does not match parameter MOTOR_TAU_THERM
+// ERROR: Temperature model does not match parameter MOTOR_WIND_TEMP_MAX
 	// WARNING: Encoder type is not supported by the script since it was moved out of the motor configuration one level up into the inverter configuration := ncINC;		 // Encoder1: Type
 	// WARNING: Encoder scaling is not supported by the script since it was moved out of the motor configuration one level up into the inverter configuration := 33554432;		 // Encoder1: Encoder scaling: increments per SCALE_ENCOD_MOTOR_REV motor revolutions
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.EncoderMounting.Angle.Type := mcMSMDEMA_UDEF;     // Encoder mounting is undefined

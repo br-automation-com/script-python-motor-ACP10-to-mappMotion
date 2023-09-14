@@ -1,9 +1,8 @@
 // --------------------------------------------------------------- 
-// Auto converted with version 1 on 2023-09-13 13:47:18.285595
+// Auto converted with version 1 on 2023-09-14 13:52:36.797284
 // --------------------------------------------------------------- 
 ACTION motvsSTO:
 	// INFO: Motor type is synchronous
-	AxisMotorCfg.ParMotorSynchronous.Motor.Default.TemperatureModel.Type := mcMMTM_NOT_USE; 	// Temperature model is turned off
 	// WARNING: Motor compatibility (MOTOR_COMPATIBILITY / 31) is set fixed to 0x0203. Old value was := 0x0203;		 // Motor: Software compatibility
 	// WARNING: Winding connection (MOTOR_WIND_CONNECT / 46) is set fixed to 1. Old values was := 1;		 // Motor: Winding connection
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.NumberOfPolePairs := 7;		 // Motor: Number of pole-pairs
@@ -34,15 +33,12 @@ ACTION motvsSTO:
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.StallCurrent := 19.5;		 // Unit (A) Motor: Stall current
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.NominalCurrent := 14.2;		 // Unit (A) Motor: Rated current
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.PeakCurrent := 87;		 // Unit (A) Motor: Peak current
-	// ERROR: Temperature model does not match parameter MOTOR_WIND_CROSS_SECT
- := 0;		 // Unit (mm²) Motor: Line cross section (-> Wert aus Vergleich mit B&R Antrieben abgeschätzt)
+	AxisMotorCfg.ParMotorSynchronous.Motor.Default.TemperatureModel.TEMP_MOTOR_MODEL_MODE.CalculationMethod.SecondOrderThermalNetwork.WindingCrossSection := 0;		 // Unit (mm²) Motor: Line cross section (-> Wert aus Vergleich mit B&R Antrieben abgeschätzt)
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.StatorResistance := 0.33;		 // Unit (Ohm) Motor: Stator resistance
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.StatorInductance := 0.0048;		 // Unit (Henry) Motor: Stator inductance
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.MomentOfInertia := 0.0034;		 // Unit (kgm²) Motor: Moment of inertia
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.EncoderMounting.Angle.Type := mcMSMDEMA_USRDEF;     // Encoder mounting is user defined
 	AxisMotorCfg.ParMotorSynchronous.Motor.Default.EncoderMounting.Angle.UserDefined.CommutationOffset := 3.1415926;		 // Unit (rad) Motor: Commutation offset
-	// ERROR: Temperature model does not match parameter MOTOR_TAU_THERM
- := 3000;		 // Unit (s) Motor: Thermal time constant
-	// ERROR: Temperature model does not match parameter MOTOR_WIND_TEMP_MAX
- := 155;		 // Unit (°C) Temperature sensor: Limit temperature
+	AxisMotorCfg.ParMotorSynchronous.Motor.Default.TemperatureModel.TEMP_MOTOR_MODEL_MODE.CalculationMethod.SecondOrderThermalNetwork.ThermalTimeConstant := 3000;		 // Unit (s) Motor: Thermal time constant
+	AxisMotorCfg.ParMotorSynchronous.Motor.Default.TemperatureModel.TEMP_MOTOR_MODEL_MODE.LimitTemperature := 155;		 // Unit (°C) Temperature sensor: Limit temperature
 END_ACTION

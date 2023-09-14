@@ -1,9 +1,9 @@
 // --------------------------------------------------------------- 
-// Auto converted with version 1 on 2023-09-13 13:47:18.625119
+// Auto converted with version 1 on 2023-09-14 13:52:36.864243
 // --------------------------------------------------------------- 
 ACTION mot_05_s:
-	// Parameter data for RF 17 DT80N4/TH
 	// INFO: Motor type is induction
+	// Parameter data for RF 17 DT80N4/TH
 	// WARNING: Motor compatibility (MOTOR_COMPATIBILITY / 31) is set fixed to 0x0203. Old value was := 0x0203;		 // Motor: Software compatibility
 	// WARNING: Winding connection (MOTOR_WIND_CONNECT / 46) is set fixed to 1. Old values was := 1;		 // Motor: Winding connection
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.NumberOfPolePairs := 2;		 // Motor: Number of pole-pairs
@@ -34,7 +34,7 @@ ACTION mot_05_s:
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.StallCurrent := 2.1;		 // Unit (A) Motor: Stall current (vorher 3.6) 2.1
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.NominalCurrent := 2.1;		 // Unit (A) Motor: Rated current (vorher 3.6) 2.1
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.PeakCurrent := 10.72;		 // Unit (A) Motor: Peak current (vorher 13.1)10.72
-	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.CurrentAndSpeedBased.CalculationMethod.SecondOrderThermalNetwork.WindingCrossSection := 0;		 // Unit (mm²) Motor: Line cross section
+	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.TEMP_MOTOR_MODEL_MODE.CalculationMethod.SecondOrderThermalNetwork.WindingCrossSection := 0;		 // Unit (mm²) Motor: Line cross section
 	AxisMotorCfg.ParMotorInduction.Motor.StarEquivalentCircuit.StatorResistance := 8.936;		 // Unit (Ohm) Motor: Stator resistance (vorher 9.6)
 	AxisMotorCfg.ParMotorInduction.Motor.StarEquivalentCircuit.StatorInductance := 0.03460;		 // Unit (Henry) Motor: Stator inductance (vorher: 0.032)
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.MomentOfInertia := 0;		 // Unit (kgm²) Motor: Moment of inertia
@@ -43,6 +43,6 @@ ACTION mot_05_s:
 	AxisMotorCfg.ParMotorInduction.Motor.StarEquivalentCircuit.RotorInductance := 0.03460;		 // Unit (Henry) Motor: Rotor inductance (vorher: 0.032)
 	AxisMotorCfg.ParMotorInduction.Motor.StarEquivalentCircuit.MutualInductance := 0.772;		 // Unit (Henry) Motor: Mutual inductance (vorher 0.387)
 	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.OptionalParameter.MagnetizingCurrent := 0.9;		 // Unit (A) Motor: Magnetizing current (1.87)
-	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.CurrentAndSpeedBased.CalculationMethod.SecondOrderThermalNetwork.ThermalTimeConstant := 0;		 // Unit (s) Motor: Thermal time constant
-	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.CurrentAndSpeedBased.LimitTemperature := 110;		 // Unit (°C) Temperature sensor: Limit temperature
+	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.TEMP_MOTOR_MODEL_MODE.CalculationMethod.SecondOrderThermalNetwork.ThermalTimeConstant := 0;		 // Unit (s) Motor: Thermal time constant
+	AxisMotorCfg.ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.TEMP_MOTOR_MODEL_MODE.LimitTemperature := 110;		 // Unit (°C) Temperature sensor: Limit temperature
 END_ACTION
