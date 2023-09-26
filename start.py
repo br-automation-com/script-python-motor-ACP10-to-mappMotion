@@ -1,5 +1,4 @@
 import xml.etree.ElementTree as ET
-import os
 import shutil
 import datetime
 
@@ -106,7 +105,7 @@ def convert_apt_files():
 
                             # add units
                             if 'Unit' in elem.attrib:
-                                new_row = new_row + ' Unit (' + elem.attrib['Unit'].replace('²', '^2').replace('°', 'Grad ') + ')' + ')'
+                                new_row = new_row + ' Unit (' + elem.attrib['Unit'].replace('²', '^2').replace('°', 'Grad ') + ')'
 
                             # add comment
                             if 'Description' in elem.attrib:
@@ -124,20 +123,7 @@ def convert_apt_files():
             output_file.write('END_ACTION\n')
             output_file.close
 
-def delete_directory_contents(directory_path):
-    # Get a list of all the files and directories in the directory
-    files_and_directories = os.listdir(directory_path)
 
-    # Iterate over the files and directories
-    for file_or_directory in files_and_directories:
-
-        # If the file or directory is a file, delete it
-        if os.path.isfile(os.path.join(directory_path, file_or_directory)):
-            os.remove(os.path.join(directory_path, file_or_directory))
-
-        # If the file or directory is a directory, recursively delete it
-        elif os.path.isdir(os.path.join(directory_path, file_or_directory)):
-            shutil.rmtree(os.path.join(directory_path, file_or_directory))
 
 
 # delete output content

@@ -1,4 +1,7 @@
-
+# ignore mkdocs
 mkdocs/.vscode/
-
 mkdocs/site/
+
+# ignore output folder
+output/
+__pycache__/
