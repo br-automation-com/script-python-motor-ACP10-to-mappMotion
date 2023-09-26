@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as ET
-import shutil
 import datetime
+import os
 
 from common import *
 from find_key_values import *
@@ -30,6 +30,10 @@ def convert_apt_files():
             # convert next file  
             print('--------------------------------------------------------------------------------')
             print('Converting file: ' + file)
+
+            # create output folder if it does not exist
+            if not (os.path.exists('output') and os.path.isdir('output')):
+                os.mkdir('output')
 
             # --------------------------------------------------------------------------
             # create new output file

@@ -4,4 +4,6 @@ mkdocs/site/
 
 # ignore output folder
 output/
+
+# ignore cahsed files
 __pycache__/
