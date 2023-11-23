@@ -16,8 +16,3 @@ Start the installation, set checkboxes, customize installation, restart the syst
     </tr>
 </table>
 
-Open a command window and execute the following command to start the conversion.
-
-```
-python ./start.py
-```

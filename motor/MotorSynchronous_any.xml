@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://brmosdev-ci.br-automation.co.at/schemas/SystemConfigurationMetaTp.xsd">
+  <Include File="Common/Templates.xml" Directory="mappMotion/{Version3}/Editors" />
+  <Property ID="M1IsInvisible" Name-en="M1IsInvisible" Template="PropertyIsInvisible" ArConfigSkip="true"/>
+  <Property ID="TypeIsReadOnly" Name-en="TypeIsReadOnly" Template="PropertyIsReadOnly" ArConfigSkip="true"/>
+  <Property ID="Type" Name-en="Type" Value="undef" ArConfigSkip="true" IsReadOnly="{TypeIsReadOnly}=1" TpIecDatatypeExcluded="DEV" IsNotRestorable="true" IsInvisible="{M1IsInvisible}=0"/>
+  <Group ID="M1" Name-en="Synchronous" Name-de="Synchron" ArConfigSkip="true" ArAsHwAc="true" IsDuplicated="true" IsInvisible="{M1IsInvisible} &gt; 0">
+    <Include File="Hardware/MOTOR/MotorSynchronous_any_Parameters.xml" Directory="mappMotion/{Version3}/Editors"/>
+  </Group>
+</Configuration>

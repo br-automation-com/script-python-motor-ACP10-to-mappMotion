@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://brmosdev-ci.br-automation.co.at/schemas/SystemConfigurationMetaTp.xsd">
+	<Selector ID="VoltageLimitation" Value="NotUsed" Name-en="Voltage limitation" Name-de="Spannungsbegrenzung" Description-de="Spannungsbegrenzung (Motor hat keinen Schutzleiter oder Wicklungen sollen geschützt werden)" Description-en="Voltage limitation (Motor has no protective conductor or windings should be protected)" IsCollapsed="true">
+		<Selection ID="NotUsed" TpEnumValue="0" Name-en="Not used" Name-de="Nicht verwendet"/>
+		<Selection ID="Used" TpEnumValue="1" Name-en="Used" Name-de="Verwendet">
+			<Property ID="MOTOR_UDC_MAX" IsUninitialized="true" DataType="REAL" Name-en="Maximum DC bus voltage" Name-de="Maximale Zwischenkreisspannung" Unit-en="V" Description-de="Maximal zulässige Zwischenkreisspannung" Description-en="Maximum permissible DC bus voltage" />
+		</Selection>
+	</Selector>
+</Configuration>

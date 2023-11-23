@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://brmosdev-ci.br-automation.co.at/schemas/SystemConfigurationMetaTp.xsd">
+	<Property ID="TemperatureSensorInterface" Value="MotorConnectorAnalog" DataType="STRING" Name-en="Temperature sensor interface" Name-de="Temperatursensorschnittstelle" Description-en="Temperature sensor configuration" Description-de="Konfiguration des Temperatursensor">
+		<ValueList>
+			<Item ID="MotorConnectorAnalog" TpEnumValue="0" TpAlternativeNameEn="Motor connector wired" Name-en="Motor connector - wired" Name-de="Motorstecker - verdrahtet" Description-en="Motor connector two-wire line" Description-de="Motorstecker Zweidrahtverbindung" />
+			<Item ID="EncoderConnectorAnalog" TpEnumValue="1" TpAlternativeNameEn="Encoder connector wired" Name-en="Encoder connector - wired" Name-de="Geberstecker - verdrahtet" Description-en="Encoder connector two-wire line" Description-de="Geberstecker Zweidrahtverbindung"/>
+			<Item ID="EncoderConnectorDigital" TpEnumValue="2" Name-en="Encoder data transfer" Name-de="Geber-Datenübertragung" Description-en="Encoder two-wire line" Description-de="Geber Zweidrahtverbindung"/>
+		    <Item ID="EncoderConnectorDigital" TpEnumValue="3" TpAlternativeNameEn="Encoder data transfer resistance" Name-en="Encoder data transfer - resistance" Name-de="Geber-Datenübertragung - Widerstand" Description-en="Encoder two-wire line with consideration of the resistance" Description-de="Geber Zweidrahtverbindung mit Berücksichtigung des Widerstands"/>
+      </ValueList>
+	</Property>
+</Configuration>

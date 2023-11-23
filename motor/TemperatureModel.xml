@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://brmosdev-ci.br-automation.co.at/schemas/SystemConfigurationMetaTp.xsd">
+  <Selector ID="TemperatureModel" Value="CurrentSpeed" TpDatatypePrefix="MMTmpMdl" TpEnumPrefix="MMTM" Name-en="Temperature model" Name-de="Temperaturmodell" Description-en="Model for winding temperature monitoring" Description-de="Model für die Wicklungstemperaturüberwachung" IsCollapsed="true">
+    <Selection ID="CurrentSpeed" TpEnumValue="0" TpDatatypePrefix="MMTMCurSpdBsd" TpEnumPrefix="MMTMCSB" Name-en="Current- and speed-based" Name-de="Strom- und drehzahlbasiert">
+      <Property ID="MOTOR_WIND_TEMP_MAX" DataType="REAL" Value="140" Name-en="Limit temperature" Name-de="Grenztemperatur" Unit-en="°C" Description-de="Maximal zulässige Wicklungstemperatur" Description-en="Maximum permissible winding temperature"/>
+      <Selector ID="Calculation" Value="SecondOrder" TpDatatypePrefix="MMTMCSBCalcMeth" Name-en="Calculation method" Name-de="Berechnungsart">
+        <Selection ID="SecondOrder" TpEnumValue="0" TpDatatypePrefix="MMTMCSBCMSecOrd" TpEnumPrefix="MMTMCSBCMSO" Name-en="Second-order thermal network" Name-de="Thermisches Netzwerk 2. Ordnung">
+          <Property ID="MOTOR_WIND_CROSS_SECT" DataType="REAL" IsUninitialized="true" Name-en="Winding cross section" Name-de="Strangquerschnitt" Unit-en="mm²" Description-de="Leiterquerschnitt einer Phase" Description-en="Phase conductor cross section" IsDeactivatable="true"/>
+          <Property ID="PIDENT_THERM_TRIP_TIME" DataType="REAL" IsUninitialized="true" Name-en="Thermal tripping time" Name-de="Thermische Auslösezeit" Unit-en="s" Description-de="Auslösezeit bei Überlast (bei bekanntem Strangquerschnitt nicht erforderlich)" Description-en="Tripping time in the event of overload (not required with known winding cross section)" IsDeactivatable="true" IsDisabled="true"/>
+          <Property ID="MOTOR_TAU_THERM" DataType="REAL" IsUninitialized="true" Name-en="Thermal time constant" Name-de="Thermische Zeitkonstante" Unit-en="s" Description-de="Thermische Zeitkonstante" Description-en="Thermal time constant"/>
+          <Include File="Hardware/MOTOR/Temperature/ReferenceTemperature.xml" Directory="mappMotion/{Version3}/Editors"/>
+        </Selection>
+        <Selection ID="FourthOrder" TpEnumValue="1" TpDatatypePrefix="MMTMCSBCMFthOrd" TpEnumPrefix="MMTMCSBCMFO" Name-en="Fourth-order thermal network" Name-de="Thermisches Netzwerk 4. Ordnung">
+          <Property ID="MOTOR_TEMPMODEL_RES1" DataType="REAL" IsUninitialized="true" Name-en="Thermal resistance 1" Name-de="Thermischer Widerstand 1" Unit-en="K/W" Description-de="Thermischer Widerstand 1" Description-en="Thermal resistance 1"/>
+          <Property ID="MOTOR_TEMPMODEL_CAP1" DataType="REAL" IsUninitialized="true" Name-en="Thermal capacity 1" Name-de="Thermische Kapazität 1" Unit-en="J/K" Description-de="Thermische Kapazität 1" Description-en="Thermal capacity 1"/>
+          <Property ID="MOTOR_TEMPMODEL_RES2" DataType="REAL" IsUninitialized="true" Name-en="Thermal resistance 2" Name-de="Thermischer Widerstand 2" Unit-en="K/W" Description-de="Thermischer Widerstand 2" Description-en="Thermal resistance 2"/>
+          <Property ID="MOTOR_TEMPMODEL_CAP2" DataType="REAL" IsUninitialized="true" Name-en="Thermal capacity 2" Name-de="Thermische Kapazität 2" Unit-en="J/K" Description-de="Thermische Kapazität 2" Description-en="Thermal capacity 2"/>
+          <Property ID="MOTOR_TEMPMODEL_LOSS1" DataType="REAL" IsUninitialized="true" Name-en="Stator thermal loss 1" Name-de="Thermische Verluste 1 Stator" Unit-en="Ws" Description-de="Linearer Koeffizient der drehzahlabhängigen Verluste im Stator" Description-en="Linear coefficient of speed-dependent losses at stator"/>
+          <Property ID="MOTOR_TEMPMODEL_LOSS2" DataType="REAL" IsUninitialized="true" Name-en="Stator thermal loss 2" Name-de="Thermische Verluste 2 Stator" Unit-en="Ws²" Description-de="Quadratischer Koeffizient der drehzahlabhängigen Verluste im Stator" Description-en="Quadratic coefficient of speed-dependent losses at stator"/>
+          <Include File="Hardware/MOTOR/Temperature/ReferenceTemperature.xml" Directory="mappMotion/{Version3}/Editors"/>
+        </Selection>
+        <Selection ID="FourthOrderWithCouplings" TpEnumValue="2" TpAlternativeNameEn="Fourth order with couplings" TpDatatypePrefix="MMTMCSBCMFthOrdWCplg" TpEnumPrefix="MMTMCSBCMFOWC" Name-en="Fourth-order thermal network with couplings" Name-de="Thermisches Netzwerk 4. Ordnung mit Kopplungen">
+          <Property ID="MOTOR_TEMPMODEL_RES1" DataType="REAL" IsUninitialized="true" Name-en="Thermal resistance 1" Name-de="Thermischer Widerstand 1" Unit-en="K/W" Description-de="Thermischer Widerstand 1" Description-en="Thermal resistance 1"/>
+          <Property ID="MOTOR_TEMPMODEL_CAP1" DataType="REAL" IsUninitialized="true" Name-en="Thermal capacity 1" Name-de="Thermische Kapazität 1" Unit-en="J/K" Description-de="Thermische Kapazität 1" Description-en="Thermal capacity 1"/>
+          <Property ID="MOTOR_TEMPMODEL_RES2" DataType="REAL" IsUninitialized="true" Name-en="Thermal resistance 2" Name-de="Thermischer Widerstand 2" Unit-en="K/W" Description-de="Thermischer Widerstand 2" Description-en="Thermal resistance 2"/>
+          <Property ID="MOTOR_TEMPMODEL_CAP2" DataType="REAL" IsUninitialized="true" Name-en="Thermal capacity 2" Name-de="Thermische Kapazität 2" Unit-en="J/K" Description-de="Thermische Kapazität 2" Description-en="Thermal capacity 2"/>
+          <Property ID="MOTOR_TEMPMODEL_RES3" DataType="REAL" IsUninitialized="true" Name-en="Thermal resistance 3" Name-de="Thermischer Widerstand 3" Unit-en="K/W" Description-de="Thermischer Widerstand 3" Description-en="Thermal resistance 3"/>
+          <Property ID="MOTOR_TEMPMODEL_LOSS1" DataType="REAL" IsUninitialized="true" Name-en="Stator thermal loss 1" Name-de="Thermische Verluste 1 Stator" Unit-en="Ws" Description-de="Linearer Koeffizient der drehzahlabhängigen Verluste im Stator" Description-en="Linear coefficient of speed-dependent losses at stator"/>
+          <Property ID="MOTOR_TEMPMODEL_LOSS2" DataType="REAL" IsUninitialized="true" Name-en="Stator thermal loss 2" Name-de="Thermische Verluste 2 Stator" Unit-en="Ws²" Description-de="Quadratischer Koeffizient der drehzahlabhängigen Verluste im Stator" Description-en="Quadratic coefficient of speed-dependent losses at stator"/>
+          <Property ID="MOTOR_TEMPMODEL_LOSS1_W" DataType="REAL" IsUninitialized="true" Name-en="Winding thermal loss 1" Name-de="Thermische Verluste 1 Wicklung" Unit-en="Ws" Description-de="Linearer Koeffizient der drehzahlabhängigen Verluste" Description-en="Linear coefficient of speed-dependent losses at windings"/>
+          <Property ID="MOTOR_TEMPMODEL_LOSS2_W" DataType="REAL" IsUninitialized="true" Name-en="Winding thermal loss 2" Name-de="Thermische Verluste 2 Wicklung" Unit-en="Ws²" Description-de="Quadratischer Koeffizient der drehzahlabhängigen Verluste" Description-en="Quadratic coefficient of speed-dependent losses at windings"/>
+          <Include File="Hardware/MOTOR/Temperature/ReferenceTemperature.xml" Directory="mappMotion/{Version3}/Editors"/>
+        </Selection>
+      </Selector>
+    </Selection>
+    <Selection ID="Current" TpEnumValue="1" TpDatatypePrefix="MMTMCurBsd" Name-en="Current-based" Name-de="Strombasiert">
+      <Property ID="MOTOR_WIND_TEMP_MAX" DataType="REAL" Value="140" Name-en="Limit temperature" Name-de="Grenztemperatur" Unit-en="°C" Description-de="Maximal zulässige Temperatur" Description-en="Maximum permissible winding temperature"/>
+      <Property ID="MOTOR_WIND_CROSS_SECT" DataType="REAL" IsUninitialized="true" Name-en="Winding cross section" Name-de="Strangquerschnitt" Unit-en="mm²" Description-de="Leiterquerschnitt einer Phase" Description-en="Phase conductor cross section" IsDeactivatable="true"/>
+      <Property ID="PIDENT_THERM_TRIP_TIME" DataType="REAL" IsUninitialized="true" Name-en="Thermal tripping time" Name-de="Thermische Auslösezeit" Unit-en="s" Description-de="Auslösezeit bei Überlast (bei bekanntem Strangquerschnitt nicht erforderlich)" Description-en="Tripping time in the event of overload (not required with known winding cross section)" IsDeactivatable="true" IsDisabled="true"/>
+      <Property ID="MOTOR_TAU_THERM" DataType="REAL" IsUninitialized="true" Name-en="Thermal time constant" Name-de="Thermische Zeitkonstante" Unit-en="s" Description-de="Thermische Zeitkonstante" Description-en="Thermal time constant"/>
+    </Selection>
+    <Selection ID="NotUsed" TpEnumValue="2" Name-en="Not used" Name-de="Nicht verwendet"/>
+  </Selector>
+</Configuration>

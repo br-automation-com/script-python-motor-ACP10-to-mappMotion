@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Hardware xmlns="http://br-automation.co.at/AS/Hardware">
+  <Module Name="8lac53" Type="MotorInduction_any">
+    <Parameter ID="MotorParameters" Location="M1" Value="StarEquivalentCircuit" />
+  <Parameter ID="MOTOR_POLEPAIRS" Location="M1/MotorParameters" Value="2" />
+<Parameter ID="Brake" Location="M1" Value="Used" />
+<Parameter ID="MOTOR_BRAKE_CURR_RATED" Location="M1/Brake" Value="0" />
+<Parameter ID="MOTOR_BRAKE_TORQ_RATED" Location="M1/Brake" Value="0" />
+<Parameter ID="MOTOR_BRAKE_ON_TIME" Location="M1/Brake" Value="0" />
+<Parameter ID="MOTOR_BRAKE_OFF_TIME" Location="M1/Brake" Value="0" />
+<Parameter ID="MOTOR_TEMPSENS_PAR1" Location="M1/MotorParameters/TemperatureSensor" Value="0" />
+<Parameter ID="MOTOR_TEMPSENS_PAR2" Location="M1/MotorParameters/TemperatureSensor" Value="0" />
+<Parameter ID="MOTOR_TEMPSENS_PAR3" Location="M1/MotorParameters/TemperatureSensor" Value="0" />
+<Parameter ID="MOTOR_TEMPSENS_PAR4" Location="M1/MotorParameters/TemperatureSensor" Value="0" />
+<Parameter ID="MOTOR_TEMPSENS_PAR5" Location="M1/MotorParameters/TemperatureSensor" Value="0" />
+<Parameter ID="MOTOR_TEMPSENS_PAR6" Location="M1/MotorParameters/TemperatureSensor" Value="0" />
+<Parameter ID="MOTOR_TEMPSENS_PAR7" Location="M1/MotorParameters/TemperatureSensor" Value="0" />
+<Parameter ID="MOTOR_TEMPSENS_PAR8" Location="M1/MotorParameters/TemperatureSensor" Value="0" />
+<Parameter ID="MOTOR_TEMPSENS_PAR9" Location="M1/MotorParameters/TemperatureSensor" Value="0" />
+<Parameter ID="MOTOR_TEMPSENS_PAR10" Location="M1/MotorParameters/TemperatureSensor" Value="0" />
+<Parameter ID="MOTOR_VOLTAGE_RATED" Location="M1/MotorParameters" Value="400" />
+<Parameter ID="MOTOR_SPEED_RATED" Location="M1/MotorParameters" Value="1400" />
+<Parameter ID="MOTOR_SPEED_MAX" Location="M1/MotorParameters" Value="2800" />
+<Parameter ID="MOTOR_TORQ_STALL" Location="M1/MotorParameters" Value="3.75" />
+<Parameter ID="MOTOR_TORQ_RATED" Location="M1/MotorParameters" Value="3.75" />
+<Parameter ID="MOTOR_TORQ_MAX" Location="M1/MotorParameters" Value="14.229" />
+<Parameter ID="MOTOR_CURR_STALL" Location="M1/MotorParameters" Value="1.6" />
+<Parameter ID="MOTOR_CURR_RATED" Location="M1/MotorParameters" Value="1.6" />
+<Parameter ID="MOTOR_CURR_MAX" Location="M1/MotorParameters" Value="5.52007" />
+<Parameter ID="MOTOR_WIND_CROSS_SECT" Location="M1/MotorParameters/TemperatureModel/Calculation" Value="0" />
+<Parameter ID="MOTOR_STATOR_RESISTANCE" Location="M1/MotorParameters" Value="17.0215" />
+<Parameter ID="MOTOR_STATOR_INDUCTANCE" Location="M1/MotorParameters" Value="49.160799999999995" />
+<Parameter ID="MOTOR_INERTIA" Location="M1/MotorParameters" Value="0.0" />
+<Parameter ID="MOTOR_ROTOR_RESISTANCE" Location="M1/MotorParameters" Value="16.6497" />
+<Parameter ID="MOTOR_ROTOR_INDUCTANCE" Location="M1/MotorParameters" Value="49.160799999999995" />
+<Parameter ID="MOTOR_MUTUAL_INDUCTANCE" Location="M1/MotorParameters" Value="558.693" />
+<Parameter ID="MOTOR_MAGNETIZING_CURR" Location="M1/MotorParameters" Value="0.84664" />
+<Parameter ID="MOTOR_TAU_THERM" Location="M1/MotorParameters/TemperatureModel/Calculation" Value="0" />
+<Parameter ID="MOTOR_WIND_TEMP_MAX" Location="M1/MotorParameters/TemperatureModel" Value="140" />
+</Module>
+</Hardware>

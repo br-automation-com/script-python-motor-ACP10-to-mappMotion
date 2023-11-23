@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://brmosdev-ci.br-automation.co.at/schemas/SystemConfigurationMetaTp.xsd">
+  <Selector ID="Encoder" Value="Used" Name-en="Encoder" Name-de="Geber" Description-en="Motor encoder" Description-de="Motorgeber" IsCollapsed="true">
+    <Selection ID="NotUsed" TpEnumValue="0" Name-en="Not used" Name-de="Nicht verwendet"/>
+    <Selection ID="Used" TpEnumValue="1" Name-en="Used" Name-de="Verwendet">
+     <Property ID="MOTOR_ENCOD_ATTR" Value="0" DataType="UINT" Name-en="Proof of fatigue strength" Name-de="Nachweis der Dauerfestigkeit" Description-en="Safe encoder mounting for operation on a SafeMOTION module" Description-de="Sicherer Geberanbau für den Betrieb am SafeMOTION-Modul" TpDiagExcluded="DEV" TpIecDatatypeExcluded="DEV">
+      <ValueList>
+        <Item ID="0" TpEnumValue="0" Name-en="No" Name-de="Nein" />
+        <Item ID="1" TpEnumValue="1" Name-en="Yes" Name-de="Ja" />
+      </ValueList>
+    </Property>
+    <Property ID="MOTOR_ENCOD_INERTIA" DataType="REAL" Value="0" Name-en="Moment of inertia" Name-de="Trägheitsmoment" Unit-en="kgcm²" Description-en="Moment of inertia for the encoder" Description-de="Massenträgheitsmoment des Gebers" />
+    <Selector ID="TemperatureSensor" Value="NotUsed" Name-en="Temperature sensor" Name-de="Temperatursensor" Description-en="Encoder temperature sensor" Description-de="Geber-Temperatursensor">
+      <Selection ID="NotUsed" TpEnumValue="0" Name-en="Not used" Name-de="Nicht verwendet" />
+      <Selection ID="Used" TpEnumValue="1" Name-en="Used" Name-de="Verwendet">
+        <Property ID="MOTOR_ENCOD_TEMP_LIM" DataType="UINT" IsUninitialized="true" Name-en="Limit temperature" Name-de="Grenztemperatur" Unit-en="°C" Description-en="Maximum permissible encoder temperature" Description-de="Maximal zulässige Gebertemperatur" />
+      </Selection>
+    </Selector>
+    </Selection>
+  </Selector>
+</Configuration>

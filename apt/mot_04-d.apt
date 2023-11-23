@@ -30,13 +30,11 @@
       </Group>
       <Group Name="Motor parameters">
         <Parameter Name="MOTOR_VOLTAGE_RATED" ID="48" Value="230.9" Unit="V" Description="Motor: Rated voltage" />
-        <Parameter Name="MOTOR_VOLTAGE_CONST" ID="49" Value="0" Unit="mV*min" Description="Motor: Voltage constant" />
         <Parameter Name="MOTOR_SPEED_RATED" ID="50" Value="1395" Unit="1/min" Description="Motor: Rated speed" />
         <Parameter Name="MOTOR_SPEED_MAX" ID="51" Value="2800" Unit="1/min" Description="Motor: Maximum speed" />
         <Parameter Name="MOTOR_TORQ_STALL" ID="52" Value="20.54" Unit="Nm" Description="Motor: Stall torque" />
         <Parameter Name="MOTOR_TORQ_RATED" ID="53" Value="20.54" Unit="Nm" Description="Motor: Rated torque" />
         <Parameter Name="MOTOR_TORQ_MAX" ID="54" Value="107.63" Unit="Nm" Description="Motor: Peak torque" />
-        <Parameter Name="MOTOR_TORQ_CONST" ID="55" Value="0" Unit="Nm/A" Description="Motor: Torque constant" />
         <Parameter Name="MOTOR_CURR_STALL" ID="56" Value="12.3" Unit="A" Description="Motor: Stall current" />
         <Parameter Name="MOTOR_CURR_RATED" ID="57" Value="12.3" Unit="A" Description="Motor: Rated current" />
         <Parameter Name="MOTOR_CURR_MAX" ID="58" Value="54.11" Unit="A" Description="Motor: Peak current" />
@@ -44,7 +42,6 @@
         <Parameter Name="MOTOR_STATOR_RESISTANCE" ID="60" Value="0.774" Unit="Ohm" Description="Motor: Stator resistance" />
         <Parameter Name="MOTOR_STATOR_INDUCTANCE" ID="61" Value="0.00398" Unit="Henry" Description="Motor: Stator inductance" />
         <Parameter Name="MOTOR_INERTIA" ID="62" Value="0" Unit="kgm²" Description="Motor: Moment of inertia" />
-        <Parameter Name="MOTOR_COMMUT_OFFSET" ID="63" Value="0" Unit="rad" Description="Motor: Commutation offset" />
         <Parameter Name="MOTOR_ROTOR_RESISTANCE" ID="76" Value="0.774" Unit="Ohm" Description="Motor: Rotor resistance" />
         <Parameter Name="MOTOR_ROTOR_INDUCTANCE" ID="77" Value="0.00398" Unit="Henry" Description="Motor: Rotor inductance" />
         <Parameter Name="MOTOR_MUTUAL_INDUCTANCE" ID="78" Value="0.067" Unit="Henry" Description="Motor: Mutual inductance" />
