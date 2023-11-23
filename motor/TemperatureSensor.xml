@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://brmosdev-ci.br-automation.co.at/schemas/SystemConfigurationMetaTp.xsd">
+  <Selector ID="TemperatureSensor" Value="Thermistor" TpDatatypePrefix="MMTmpSens" TpEnumPrefix="MMTS" Name-de="Temperatursensor" Name-en="Temperature sensor" Description-de="Temperatursensor Konfiguration" Description-en="Temperature sensor configuration" IsCollapsed="true">
+    <Selection ID="Thermistor" TpEnumValue="0" TpDatatypePrefix="MMTSTherm" Name-en="Thermistor" Name-de="Thermistor">
+      <Property ID="MOTOR_TEMPSENS_LIM" DataType="UINT" Value="0" IsAlwaysSaved="true" Name-en="Limit temperature" Name-de="Grenztemperatur" Unit-en="°C" Description-de="Maximal zulässige Temperatur" Description-en="Maximum permissible temperature"/>
+      <Include File="Hardware/MOTOR/Temperature/TemperatureSensorInterface.xml" Directory="mappMotion/{Version3}/Editors"/>
+      <Property ID="MOTOR_TEMPSENS_PAR1" DataType="REAL" IsUninitialized="true" Name-de="Widerstand R0" Name-en="Resistance R0" Unit-en="Ω" Description-de="Widerstand bei Temperatur T0" Description-en="Resistance at temperature T0"/>
+      <Property ID="MOTOR_TEMPSENS_PAR2" DataType="REAL" IsUninitialized="true" Name-de="Widerstand R7" Name-en="Resistance R7" Unit-en="Ω" Description-de="Widerstand bei Temperatur T7" Description-en="Resistance at temperature T7"/>
+      <Property ID="MOTOR_TEMPSENS_PAR3" DataType="REAL" IsUninitialized="true" Name-de="Temperatur T0" Name-en="Temperature T0" Unit-en="°C" Description-de="Temperatur bei Widerstand R0" Description-en="Temperature at resistance R0"/>
+      <Property ID="MOTOR_TEMPSENS_PAR4" DataType="REAL" IsUninitialized="true" Name-de="Temperatur T1" Name-en="Temperature T1" Unit-en="°C" Description-de="Temperatur bei Widerstand R0 + 1/7 * (R7 - R0)" Description-en="Temperature at resistance R0 + 1/7 * (R7 - R0)"/>
+      <Property ID="MOTOR_TEMPSENS_PAR5" DataType="REAL" IsUninitialized="true" Name-de="Temperatur T2" Name-en="Temperature T2" Unit-en="°C" Description-de="Temperatur bei Widerstand R0 + 2/7 * (R7 - R0)" Description-en="Temperature at resistance R0 + 2/7 * (R7 - R0)"/>
+      <Property ID="MOTOR_TEMPSENS_PAR6" DataType="REAL" IsUninitialized="true" Name-de="Temperatur T3" Name-en="Temperature T3" Unit-en="°C" Description-de="Temperatur bei Widerstand R0 + 3/7 * (R7 - R0)" Description-en="Temperature at resistance R0 + 3/7 * (R7 - R0)"/>
+      <Property ID="MOTOR_TEMPSENS_PAR7" DataType="REAL" IsUninitialized="true" Name-de="Temperatur T4" Name-en="Temperature T4" Unit-en="°C" Description-de="Temperatur bei Widerstand R0 + 4/7 * (R7 - R0)" Description-en="Temperature at resistance R0 + 4/7 * (R7 - R0)"/>
+      <Property ID="MOTOR_TEMPSENS_PAR8" DataType="REAL" IsUninitialized="true" Name-de="Temperatur T5" Name-en="Temperature T5" Unit-en="°C" Description-de="Temperatur bei Widerstand R0 + 5/7 * (R7 - R0)" Description-en="Temperature at resistance R0 + 5/7 * (R7 - R0)"/>
+      <Property ID="MOTOR_TEMPSENS_PAR9" DataType="REAL" IsUninitialized="true" Name-de="Temperatur T6" Name-en="Temperature T6" Unit-en="°C" Description-de="Temperatur bei Widerstand R0 + 6/7 * (R7 - R0)" Description-en="Temperature at resistance R0 + 6/7 * (R7 - R0)"/>
+      <Property ID="MOTOR_TEMPSENS_PAR10" DataType="REAL" IsUninitialized="true" Name-de="Temperatur T7" Name-en="Temperature T7" Unit-en="°C" Description-de="Temperatur bei Widerstand R7" Description-en="Temperature at resistance R7"/>
+    </Selection>
+    <Selection ID="PTCSwitch" TpEnumValue="1" TpDatatypePrefix="MMTSSwPTCTherm" Name-en="Switching PTC thermistor" Name-de="PTC-Schalter">
+      <Include File="Hardware/MOTOR/Temperature/TemperatureSensorInterface.xml" Directory="mappMotion/{Version3}/Editors"/>
+      <Property ID="MOTOR_TEMPSENS_PAR1" DataType="REAL" IsUninitialized="true" Name-de="Nennansprechwiderstand" Name-en="Nominal response resistance" Unit-en="Ω" Description-de="Widerstand bei Nennansprechtemperatur" Description-en="Resistance at Nominal response temperature"/>
+      <Property ID="MOTOR_TEMPSENS_PAR2" DataType="REAL" IsUninitialized="true" Name-de="Minimaler Widerstand" Name-en="Minimum resistance" Unit-en="Ω" Description-de="Minimal zulässiger Widerstand" Description-en="Minimum permissible resistance"/>
+      <Property ID="MOTOR_TEMPSENS_PAR3" DataType="REAL" IsUninitialized="true" Name-de="Nennansprechtemperatur" Name-en="Nominal response temperature" Unit-en="°C" Description-de="Temperatur bei Nennansprechwiderstand" Description-en="Temperature at Nominal response resistance"/>
+    </Selection>
+    <Selection ID="ThermalSwitch" TpEnumValue="2" TpDatatypePrefix="MMTSThrmSw" TpEnumPrefix="MMTSTS" Name-en="Thermoswitches" Name-de="Thermoschalter">
+      <Include File="Hardware/MOTOR/Temperature/TemperatureSensorInterface.xml" Directory="mappMotion/{Version3}/Editors"/>
+      <Property ID="MOTOR_TEMPSENS_PAR3" DataType="REAL" IsUninitialized="true" Name-de="Nennansprechtemperatur" Name-en="Nominal response temperature" Unit-en="°C" Description-de="Nennansprechtemperatur bei 1000 Ohm" Description-en="Temperature at nominal response resistance of 1000 ohms"/>
+      <Property ID="MOTOR_TEMPSENS_PAR10" Value="0" DataType="USINT" Name-de="Schaltzustand bei Übertemperatur" Name-en="Switching state on overtemperature" Description-de="Schaltzustand bei Übertemperatur" Description-en="Switching state on overtemperature">
+        <ValueList>
+          <Item ID="0" TpEnumValue="0" Name-en="Normally Closed" Name-de="Öffner"/>
+          <Item ID="1" TpEnumValue="1" Name-en="Normally Open" Name-de="Schließer"/>
+        </ValueList>
+      </Property>
+    </Selection>
+    <Selection ID="NotUsed" TpEnumValue="3" Name-en="Not used" Name-de="Nicht verwendet"/>
+  </Selector>
+</Configuration>

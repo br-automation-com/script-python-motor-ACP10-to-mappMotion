@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://brmosdev-ci.br-automation.co.at/schemas/SystemConfigurationMetaTp.xsd">
+  <Group ID="M1" Name-en="Induction" Name-de="Asynchron" ArConfigSkip="true" ArAsHwAc="true" IsDuplicated="true">
+    <Include File="Hardware/MOTOR/MotorInduction_any_Parameters.xml" Directory="mappMotion/{Version3}/Editors"/>
+  </Group>
+</Configuration>

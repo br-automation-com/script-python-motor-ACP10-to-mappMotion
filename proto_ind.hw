@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Hardware xmlns="http://br-automation.co.at/AS/Hardware">
+  <Module Name="MOTOR_NAME" Type="MotorInduction_any" >
+    <Parameter ID="MotorParameters" Location="M1" Value="StarEquivalentCircuit" />
+  </Module>
+</Hardware>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://brmosdev-ci.br-automation.co.at/schemas/SystemConfigurationMetaTp.xsd">
+  <Group ID="EncoderMounting" Name-en="Encoder mounting" Name-de="Geberanbau" Description-de="Geberanbau" Description-en="Encoder mounting" IsCollapsed="true">
+    <Selector ID="Angle" Value="UserDefined" TpDatatypePrefix="MMDEMAng" Name-en="Angle" Name-de="Winkel" Description-de="Winkel zwischen Motorgebernullpunkt und Flussraumzeiger" Description-en="Angle between motor encoder zero point and flux space vector">
+      <Selection ID="UserDefined" TpEnumValue="0" Name-en="User-defined" Name-de="Benutzerdefiniert">
+        <Property ID="MOTOR_COMMUT_OFFSET" Value="0" DataType="REAL" Name-en="Commutation offset" Name-de="Kommutierungsoffset" Unit-en="rad" ValueRange="-6.2832-6.2832" Description-de="Winkel zwischen Motorgebernullpunkt und Flussraumzeiger" Description-en="Angle between motor encoder zero point and flux space vector"/>
+      </Selection>
+      <Selection ID="Undefined" TpEnumValue="1" Name-en="Undefined" Name-de="Nicht definiert">
+        <Selector ID="AutomaticIdentification" Value="NotUsed" Name-en="Automatic identification" Name-de="Automatische Identifizierung" Description-de="Automatische Identifizierung des Winkels beim Einschalten des Reglers" Description-en="Automatic identification of the angle when switching on the controller">
+          <Selection ID="NotUsed" TpEnumValue="0" Name-en="Not used" Name-de="Nicht verwendet"/>
+          <Selection ID="Saturation" TpEnumValue="1" Name-en="Saturation" Name-de="Sättigung">
+            <Property ID="PHASING_CURR" IsUninitialized="true" DataType="REAL" Name-en="Phasing current" Name-de="Einphasstrom" Unit-en="A" Description-de="Strom für die Identifizierung (optional)" Description-en="Current for identification (optional)" IsDeactivatable="true" IsDisabled="true"/>
+          </Selection>
+          <Selection ID="Dither" TpEnumValue="2" Name-en="Dither" Name-de="Dither">
+            <Property ID="PHASING_CURR" IsUninitialized="true" DataType="REAL" Name-en="Phasing current" Name-de="Einphasstrom" Unit-en="A" Description-de="Strom für die Identifizierung (optional)" Description-en="Current for identification (optional)" IsDeactivatable="true" IsDisabled="true"/>
+            <Property ID="PHASING_TIME" IsUninitialized="true" DataType="REAL" Name-en="Phasing time" Name-de="Einphaszeit" Unit-en="s" Description-de="Dauer der Identifizierung (optional)" Description-en="Duration of identification (optional)" IsDeactivatable="true" IsDisabled="true"/>
+          </Selection>
+          <Selection ID="Dither2" TpEnumValue="5" Name-en="Dither2" Name-de="Dither2">
+            <Property ID="PHASING_CURR" IsUninitialized="true" DataType="REAL" Name-en="Phasing current" Name-de="Einphasstrom" Unit-en="A" Description-de="Strom für die Identifizierung (optional)" Description-en="Current for identification (optional)" IsDeactivatable="true" IsDisabled="true"/>
+            <Property ID="PHASING_TIME" IsUninitialized="true" DataType="REAL" Name-en="Phasing time" Name-de="Einphaszeit" Unit-en="s" Description-de="Dauer der Identifizierung (optional)" Description-en="Duration of identification (optional)" IsDeactivatable="true" IsDisabled="true"/>
+          </Selection>
+        </Selector>
+      </Selection>
+      <Selection ID="StoredOnEncoder" TpEnumValue="2" Name-en="Value stored on encoder" Name-de="Wert auf Geberspeicher"/>
+    </Selector>
+  </Group>
+</Configuration>

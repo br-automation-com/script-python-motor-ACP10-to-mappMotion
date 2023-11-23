@@ -1,0 +1,4 @@
+Conversion log for file mot_04-d with version 2 on 2023-11-23 13:58:49.845562
+
+Conversion protocol for SK5382
+ERROR: Parameter id MOTOR_THERMAL_CONST not found

@@ -1,12 +1,13 @@
 from common import *
+from settings import *
 
 # --------------------------------------------------------------------------
-# find motor type
-def find_motor_type(rootMotor):
+# add motor type for structure
+def add_motor_type_struc(rootMotor, output_file):
     motor_type = motor_type_undefined
     new_row = ''
 
-    elem = find_element(rootMotor, 'MOTOR_TYPE')
+    elem, parents = find_element(rootMotor, 'Name', 'MOTOR_TYPE')
 
     if elem != None and 'Value' in elem.attrib:
         # motor type is induction
@@ -21,15 +22,17 @@ def find_motor_type(rootMotor):
             new_row = '// ERROR: Unknown motor type\n'
             print(new_row.replace('// ', '-->'))
 
-    return motor_type, new_row
+        output_file.write(new_row)
+
+    return motor_type
 
 # --------------------------------------------------------------------------
-# find phasing mode
-def find_phasing_mode(rootMotor):
+# add phasing mode for structure
+def add_phasing_mode_struc(rootMotor, output_file):
     phasing_mode = ''
     new_row = ''
 
-    elem = find_element(rootMotor, 'PHASING_MODE')
+    elem, parents = find_element(rootMotor, 'Name', 'PHASING_MODE')
 
     if elem != None and 'Value' in elem.attrib:
         # phasing mode is saturation
@@ -52,15 +55,17 @@ def find_phasing_mode(rootMotor):
             new_row = '// ERROR: Unsupported phasing mode\n'
             print(new_row.replace('// ', '-->'))
 
-    return phasing_mode, new_row
+        output_file.write(new_row)
+
+    return phasing_mode
 
 # --------------------------------------------------------------------------
-# find temperature sensor
-def find_temp_sensor(rootMotor, motor_type):
+# add temperature sensor for structure
+def add_temp_sensor_struc(rootMotor, motor_type, output_file):
     temperature_sensor = 'Thermistor'
     new_row = ''
 
-    elem = find_element(rootMotor, 'MOTOR_TEMPSENS_TYPE')
+    elem, parents = find_element(rootMotor, 'Name', 'MOTOR_TEMPSENS_TYPE')
 
     if elem != None and 'Value' in elem.attrib:
         # split sensor type in sensor type and motor interface, why put them together in the first place?
@@ -115,7 +120,7 @@ def find_temp_sensor(rootMotor, motor_type):
             new_row += 'mcMMTSTTSI_MOT_CON_WRD;\t\t // Temperature sensor interface'
         # temperature sensor is thermistor
         elif high_byte == 16:
-            new_row += ' mcMMTSTTSI_ENC_DAT_TRAN_RES;\t\t // Temperature sensor interface'
+            new_row += 'mcMMTSTTSI_ENC_DAT_TRAN_RES;\t\t // Temperature sensor interface'
         # temperature sensor is PTC
         elif high_byte == 17:
             new_row += 'mcMMTSTTSI_ENC_DAT_TRAN;\t\t // Temperature sensor interface'
@@ -126,16 +131,23 @@ def find_temp_sensor(rootMotor, motor_type):
             new_row = '// ERROR: Unsupported temperature sensor motor interface\n'
             print(new_row.replace('// ', '-->'))
 
-    return temperature_sensor, new_row
+        output_file.write(new_row)
+
+    return temperature_sensor
 
 # --------------------------------------------------------------------------
-# find temperature model
-def find_temp_model(rootMotor, motor_type):
+# add temperature model for structure
+def add_temp_model_struc(rootMotor, motor_type, output_file):
     temperature_model = 'CurrentAndSpeedBased'
     temperature_model_calc_method = 'CalculationMethod.SecondOrderThermalNetwork'
     new_row = ''
 
-    elem = find_element(rootMotor, 'TEMP_MOTOR_MODEL')
+    elem, parents = find_element(rootMotor, 'Name', 'MOTOR_TEMPMODEL_MODE')
+
+    # --------------------------------------------------------------------------
+    # try old parameter when motor model was not found
+    if elem == None:
+        elem, parents = find_element(rootMotor, 'Name', 'TEMP_MOTOR_MODEL_MODE')
 
     # --------------------------------------------------------------------------
     # found temperature model
@@ -174,55 +186,69 @@ def find_temp_model(rootMotor, motor_type):
         elif elem.attrib['Value'] == '4':
             temperature_model = 'CurrentAndSpeedBased'
             temperature_model_calc_method = 'CalculationMethod.FourthOrderThermalNetwork'
-            new_row += 'mcMMTM_CUR_AND_SPDBASED;\t\t// Temperature model is current and speed based\n'
+            new_row += 'mcMMTM_CUR_AND_SPDBASED;\t\t// Temperature model is current and speed based, using equivalent circuit network.\n\t// WARNING: Make sure temperature sensor configuration is correct. \n'
+        # temperature model is current and speed based, calc method is 4th order with thermal network
+        elif elem.attrib['Value'] == '5':
+            temperature_model = 'CurrentAndSpeedBased'
+            temperature_model_calc_method = 'CalculationMethod.FourthOrderThermalNetwork'
+            new_row += 'mcMMTM_CUR_AND_SPDBASED;\t\t// Temperature model is current and speed based, using equivalent circuit extended network.\n\t// WARNING: Make sure temperature sensor configuration is correct. \n\n'
         # temperature model is current and speed based, calc method is 4th order with thermal network
         elif elem.attrib['Value'] == '6':
             temperature_model = 'CurrentAndSpeedBased'
             temperature_model_calc_method = 'CalculationMethod.FourthOrderWithCouplings'
-            new_row += 'mcMMTM_CUR_AND_SPDBASED;\t\t// Temperature model is current and speed based\n'
+            new_row += 'mcMMTM_CUR_AND_SPDBASED;\t\t// Temperature model is current and speed based, using equivalent circuit extended network with correction.\n\t// WARNING: Make sure temperature sensor configuration is correct. \n\n'
         else:
             new_row = '// ERROR: Unsupported temperature model\n'
             print(new_row.replace('// ', '-->'))
 
-    return temperature_model, temperature_model_calc_method, new_row
+        output_file.write(new_row)
+
+    return temperature_model, temperature_model_calc_method
 
 # --------------------------------------------------------------------------
-# find temperature reference sensor
-def find_temp_ref_sensor(rootMotor, motor_type, temperature_model, temperature_model_calc_method):
+# add temperature reference sensor for structure
+def add_temp_ref_sensor_struc(rootMotor, motor_type, temperature_model, temperature_model_calc_method, output_file):
     new_row = ''
 
-    elem = find_element(rootMotor, 'MOTOR_TEMPMODEL_REFSENS')
+    elem, parents = find_element(rootMotor, 'Name', 'MOTOR_TEMPMODEL_REFSENS')
 
     # --------------------------------------------------------------------------
     # found temperature model reference temperature
     if elem != None and 'Value' in elem.attrib:
-        # make sure model and cals method come before ref temperature
+        # make sure model and calls method come before ref temperature
         if temperature_model != '' and temperature_model_calc_method != '':
-            # motor is induction motor
-            if motor_type == motor_type_induction:
-                new_row = '\t' + variable_name + 'ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.' + temperature_model + '.CalculationMethod.' + temperature_model_calc_method + '.ReferenceTemperature.Type := '
-            # motor is synchronous motor
-            elif motor_type == motor_type_synchronous:
-                new_row = '\t' + variable_name + 'ParMotorSynchronous.Motor.Default.TemperatureModel.' + temperature_model + '.CalculationMethod.' + temperature_model_calc_method + '.ReferenceTemperature.Type := '
-            # generate error when motor type is unknown
-            else:
-                new_row = '// ERROR: Temperature model defined before motor type\n'
-                print(new_row.replace('// ', '-->'))
+            if temperature_model == 'CurrentAndSpeedBased':
+                # motor is induction motor
+                if motor_type == motor_type_induction:
+                    new_row = '\t' + variable_name + 'ParMotorInduction.Motor.PowerRatingPlate.TemperatureModel.' + temperature_model + '.CalculationMethod.' + temperature_model_calc_method + '.ReferenceTemperature.Type := '
+                # motor is synchronous motor
+                elif motor_type == motor_type_synchronous:
+                    new_row = '\t' + variable_name + 'ParMotorSynchronous.Motor.Default.TemperatureModel.' + temperature_model + '.CalculationMethod.' + temperature_model_calc_method + '.ReferenceTemperature.Type := '
+                # generate error when motor type is unknown
+                else:
+                    new_row = '// ERROR: Temperature model defined before motor type\n'
+                    print(new_row.replace('// ', '-->'))
 
-            # temperature model is motor ambient
-            if elem.attrib['Value'] == '0':
-                new_row += 'mcMMTMCSBCMRT_NOM_AMB_TMP;\t\t// Temperature model reference is motor ambient\n'
-            # temperature model is reference is motor
-            elif elem.attrib['Value'] == '1':
-                new_row += 'mcMMTMCSBCMRT_MOT_TMP_SENS;\t\t// Temperature model reference is motor\n'
-            elif elem.attrib['Value'] == '4':
-                new_row += 'mcMMTMCSBCMRT_ENC_TMP_SENS;\t\t// Temperature model reference is encoder\n'
+                # temperature model is motor ambient
+                if elem.attrib['Value'] == '0':
+                    new_row += 'mcMMTMCSBCMRT_NOM_AMB_TMP;\t\t// Temperature model reference is motor ambient\n'
+                # temperature model is reference is motor
+                elif elem.attrib['Value'] == '1':
+                    new_row += 'mcMMTMCSBCMRT_MOT_TMP_SENS;\t\t// Temperature model reference is motor\n'
+                elif elem.attrib['Value'] == '4':
+                    new_row += 'mcMMTMCSBCMRT_ENC_TMP_SENS;\t\t// Temperature model reference is encoder\n'
+                else:
+                    new_row = '// ERROR: Unsupported temperature model reference temperature\n'
+                    print(new_row.replace('// ', '-->'))
+
             else:
-                new_row = '// ERROR: Unsupported temperature model reference temperature\n'
+                new_row = '// ERROR: Temperature model must be current and speed based for reference temperature\n'
                 print(new_row.replace('// ', '-->'))
 
         else:
             new_row = '// ERROR: Temperature model reference temperature was set before temperature model or with temperature model turned off\n'
             print(new_row.replace('// ', '-->'))
 
-    return new_row
+        output_file.write(new_row)
+        
+    return True

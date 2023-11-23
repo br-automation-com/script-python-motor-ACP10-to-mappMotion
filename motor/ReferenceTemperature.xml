@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://brmosdev-ci.br-automation.co.at/schemas/SystemConfigurationMetaTp.xsd">
+  <Selector ID="ReferenceTemperature" Value="ReferenceTemperatureMotorSensor" TpDatatypePrefix="MMTMCSBCMRefTmp" TpEnumPrefix="MMTMCSBCMRT" Name-en="Reference temperature" Name-de="Referenztemperatur" Description-de="Referenztemperatur der Wicklungstemperaturüberwachung" Description-en="Reference temperature of winding temperature monitoring">
+    <Selection ID="ReferenceTemperatureMotorSensor" TpEnumValue="0" Name-en="Motor temperature sensor" Name-de="Motortemperatursensor" />
+    <Selection ID="ReferenceTemperatureAmbient" TpEnumValue="1" Name-en="Nominal ambient temperature" Name-de="Nennumgebungstemperatur" />
+    <Selection ID="ReferenceTemperatureEncoder" TpEnumValue="2" IsFiltered="{../../Calculation}&lt;&gt;'FourthOrderWithCouplings'" Name-en="Encoder temperature sensor" Name-de="Gebertemperatursensor">
+      <Property ID="MOTOR_TEMPMODEL_REF_OFF" DataType="REAL" Value="0" Name-en="Temperature offset" Name-de="Temperaturoffset" Unit-en="°C" Description-en="Temperature offset for reference temperature" Description-de="Temperaturoffset für die Referenztemperatur"/>
+      <Property ID="MOTOR_TEMPMODEL_REF_TAU" DataType="REAL" Value="0" Name-en="Time constant" Name-de="Zeitkonstante" Unit-en="s" Description-en="Time constant for the reference temperature" Description-de="Zeitkonstante für die Referenztemperatur"/>
+    </Selection>
+  </Selector>
+</Configuration>

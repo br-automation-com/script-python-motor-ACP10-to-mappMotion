@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://brmosdev-ci.br-automation.co.at/schemas/SystemConfigurationMetaTp.xsd">
+  <Selector ID="Gearbox" Value="NotUsed" Name-en="Gearbox" Name-de="Getriebe" Description-de="Getriebe" Description-en="Gearbox" IsCollapsed="true">
+    <Selection ID="NotUsed" TpEnumValue="0" Name-en="Not used" Name-de="Nicht verwendet" />
+    <Selection ID="Used" TpEnumValue="1" Name-en="Used" Name-de="Verwendet">
+      <Include File="Hardware/Gearbox/GearboxParameter.xml" Directory="mappMotion/{Version3}/Editors" />
+    </Selection>
+    <Selection ID="UsedWithDynamicTorqueLimitation" TpEnumValue="2" Name-en="Used with dynamic torque limitation" Name-de="Verwendet mit dynamischer Drehmomentbegrenzung">
+      <Include File="Hardware/Gearbox/GearboxParameter.xml" Directory="mappMotion/{Version3}/Editors" />
+      <Include File="Hardware/Gearbox/GearboxParameterFriction.xml" Directory="mappMotion/{Version3}/Editors" />
+    </Selection>
+  </Selector>
+</Configuration>

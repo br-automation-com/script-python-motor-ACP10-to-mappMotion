@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://brmosdev-ci.br-automation.co.at/schemas/SystemConfigurationMetaTp.xsd">
+  <Property ID="MOTOR_TYPE" Name-en="Motor type" Value="4" DataType="UINT" TpIecDatatypeExcluded="DEV" IsInvisible="true" />
+  <Property ID="MOTOR_VENDOR_ID" Name-en="Vendor ID" Name-de="Hersteller ID" Value="0" DataType="UINT" TpIecDatatypeExcluded="DEV" IsInvisible="true" />
+  <Selector ID="MotorParameters" Value="Standard" Name-en="Motor" Name-de="Motor">
+    <Selection ID="Standard" TpEnumValue="0" Name-de="Standard" Name-en="Default">
+      <Include File="Hardware/MOTOR/MotorParameter/Synchronous.xml" Directory="mappMotion/{Version3}/Editors"/>
+      <Include File="Hardware/MOTOR/Temperature/TemperatureSensor.xml" Directory="mappMotion/{Version3}/Editors"/>
+      <Include File="Hardware/MOTOR/Temperature/TemperatureModel.xml" Directory="mappMotion/{Version3}/Editors"/>
+    </Selection>
+  </Selector>
+  <Include File="Hardware/MOTOR/Brake/Brake.xml" Directory="mappMotion/{Version3}/Editors"/>
+  <Include File="Hardware/MOTOR/Encoder/Encoder.xml" Directory="mappMotion/{Version3}/Editors"/>
+  <Include File="Hardware/MOTOR/Gearbox/Gearbox.xml" Directory="mappMotion/{Version3}/Editors" />
+</Configuration>

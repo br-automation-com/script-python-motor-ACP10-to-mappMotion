@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://brmosdev-ci.br-automation.co.at/schemas/SystemConfigurationMetaTp.xsd">
+  <Property ID="MOTOR_TYPE" Name-en="Motor type" Value="3" DataType="UINT" TpIecDatatypeExcluded="DEV" IsInvisible="true" />
+  <Property ID="MOTOR_VENDOR_ID" Name-en="Vendor ID" Name-de="Hersteller ID" Value="0" DataType="UINT" TpIecDatatypeExcluded="DEV" IsInvisible="true" />
+  <Selector ID="MotorParameters" Value="MotorPowerRatingPlate" Name-en="Motor" Name-de="Motor">
+    <Selection ID="MotorPowerRatingPlate" TpEnumValue="0" Name-en="Power rating plate" Name-de="Leistungsschild" Description-de="Parameter zur Berechnung und Identifizierung der Motordaten" Description-en="Data used for calculation and identification of motor data">
+      <Include File="Hardware/MOTOR/MotorParameter/InductionPowerRatingPlate.xml" Directory="mappMotion/{Version3}/Editors" />
+      <Include File="Hardware/MOTOR/Temperature/TemperatureSensor.xml" Directory="mappMotion/{Version3}/Editors" />
+      <Include File="Hardware/MOTOR/Temperature/TemperatureModel.xml" Directory="mappMotion/{Version3}/Editors" />
+    </Selection>
+    <Selection ID="StarEquivalentCircuit" TpEnumValue="1" Name-de="Stern Ersatzschaltung" Name-en="Star equivalent circuit">
+      <Include File="Hardware/MOTOR/MotorParameter/Induction.xml" Directory="mappMotion/{Version3}/Editors" />
+      <Include File="Hardware/MOTOR/Temperature/TemperatureSensor.xml" Directory="mappMotion/{Version3}/Editors" />
+      <Include File="Hardware/MOTOR/Temperature/TemperatureModel.xml" Directory="mappMotion/{Version3}/Editors" />
+    </Selection>
+  </Selector>
+  <Include File="Hardware/MOTOR/Brake/Brake.xml" Directory="mappMotion/{Version3}/Editors" />
+  <Include File="Hardware/MOTOR/Encoder/Encoder.xml" Directory="mappMotion/{Version3}/Editors" />
+  <Include File="Hardware/MOTOR/Gearbox/Gearbox.xml" Directory="mappMotion/{Version3}/Editors" />
+</Configuration>

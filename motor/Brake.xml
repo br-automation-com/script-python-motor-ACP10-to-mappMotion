@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://brmosdev-ci.br-automation.co.at/schemas/SystemConfigurationMetaTp.xsd">
+  <Selector ID="Brake" Value="NotUsed" Name-en="Brake" Name-de="Bremse" Description-de="Haltebremse" Description-en="Holding brake" IsCollapsed="true">
+    <Selection ID="NotUsed" TpEnumValue="0" Name-en="Not used" Name-de="Nicht verwendet" />
+    <Selection ID="Used" TpEnumValue="1" Name-en="Used" Name-de="Verwendet">
+      <Property ID="MOTOR_BRAKE_CURR_RATED" DataType="REAL" IsUninitialized="true" Name-en="Nominal current" Name-de="Nennstrom" Unit-en="A" Description-de="Strom der Haltebremse" Description-en="Current of the holding brake" />
+      <Property ID="MOTOR_BRAKE_TORQ_RATED" DataType="REAL" IsUninitialized="true" Name-en="Nominal torque" Name-de="Nennmoment" Unit-en="Nm" Description-de="Minimales Haltemoment der Haltebremse" Description-en="Minimum holding torque of the holding brake" />
+      <Property ID="MOTOR_BRAKE_ON_TIME" DataType="REAL" IsUninitialized="true" Name-en="Activation delay" Name-de="Verzögerungszeit Blockieren" Unit-en="s" Description-de="Aufbauzeit des Haltemoments nach Abschalten der Betriebsspannung" Description-en="Holding torque build-up time after switching off the operating voltage" />
+      <Property ID="MOTOR_BRAKE_OFF_TIME" DataType="REAL" IsUninitialized="true" Name-en="Release delay" Name-de="Verzögerungszeit Lüften" Unit-en="s" Description-de="Absenkzeit des Haltemoments nach Einschalten der Betriebsspannung" Description-en="Holding torque decaying time after switching on the operating voltage" />
+      <Property ID="MOTOR_BRAKE_INERTIA" DataType="REAL" IsUninitialized="true" Name-en="Moment of inertia" Name-de="Trägheitsmoment" Unit-en="kgcm²" Description-de="Massenträgheitsmoment der Haltebremse" Description-en="Moment of inertia for the holding brake" />
+      <Selector ID="ControlMode" Value="Switched" Name-en="Control mode" Name-de="Ansteuerungsmodus" Description-en="Behaviour of holding brake control" Description-de="Verhalten der Bremsenansteuerung">
+        <Selection ID="Switched" TpEnumValue="0" Name-en="Switched" Name-de="Geschalten" />
+        <Selection ID="VoltageControlled" TpEnumValue="1" Name-en="Voltage controlled" Name-de="Spannungsgeregelt">
+          <Property ID="MOTOR_BRAKE_VOLT_REL" DataType="REAL" IsUninitialized="true" Name-en="Release voltage" Name-de="Lüftspannung" Unit-en="V" Description-en="Nominal voltage, to release (open) the holding brake" Description-de="Erforderliche Spannung zum Lüften (Öffnen) der Haltebremse" />
+          <Property ID="MOTOR_BRAKE_VOLT_HOLD" DataType="REAL" IsUninitialized="true" Name-en="Hold voltage" Name-de="Haltespannung" Unit-en="V" Description-en="Nominal voltage to ensure the holding brake remains open" Description-de="Erforderliche Spannung damit die Haltebremse geöffnet bleibt" />
+        </Selection>
+      </Selector>
+      <Selector ID="Limits" Value="NotUsed" Name-en="Limits" Name-de="Grenzwerte" Description-en="Holding brake limits" Description-de="Grenzwerte der Haltebremse" IsCollapsed="true">
+        <Selection ID="NotUsed" TpEnumValue="0" Name-en="Not used" Name-de="Nicht verwendet" />
+        <Selection ID="Used" TpEnumValue="1" Name-en="Used" Name-de="Verwendet">
+          <Property ID="MOTOR_BRAKE_VOLT_MAX" DataType="REAL" IsUninitialized="true" Name-en="Maximum voltage" Name-de="Maximalspannung" Unit-en="V" Description-en="Maximum permissible voltage to release (open) the holding brake" Description-de="Maximal zulässige Spannung zum Lüften (Öffnen) der Haltebremse" />
+          <Property ID="MOTOR_BRAKE_FRICWRK_LIM" Value="0.0" DataType="REAL" IsInvisible="true" Name-en="Permitted friction work" Name-de="Zulässige Reibarbeit" Unit-en="J" Description-en="Permitted friction work up to the waer limit" Description-de="Zulässige Reibarbeit bis zur Verschleißgrenze" />
+        </Selection>
+      </Selector>
+    </Selection>
+  </Selector>
+</Configuration>
